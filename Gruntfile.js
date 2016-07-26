@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     '<%= buildDir %>/lautrec.css': [
-                        '<%= srcDir %>/less/lautrec.less',
+                        '<%= srcDir %>/less/styles.less',
                         '<%= srcDir %>/bower_components/animate.css/animate.css'
                     ]
                 }
