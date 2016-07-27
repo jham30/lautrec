@@ -1,0 +1,203 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 28, 2016, 2:43:41 PM
+    Author     : jaime
+*/
+/*.fix_H{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}*/
+.ltcLink
+{
+    text-decoration: none;
+    cursor:pointer;
+    white-space: nowrap;
+    .animation;
+    .flexProperties(@fDis:inline-flex;@fDir:row;@fJustCont:flex-start;@fAlignItem:center);
+    a{
+        text-decoration: none;
+    }
+    &:hover,
+    &.selected{
+        text-decoration: underline;
+    }
+    &.order_r{
+        .ltcIcon{
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+            margin-left: 0.5em;
+        }
+    }
+    &.order_l{
+        .ltcIcon{
+        }
+    }
+    .ltcIcon{
+    }
+    .ltcLabel{
+    }
+    /*esto hay ke ponerlo en extendidos*/
+    &.socN_f,&.socN_t,&.socN_g{
+        height: 3em;
+        width: 3em;
+        color: #fff;
+        margin-left: 1em;
+    }
+    &.socN_f{
+        background-color: @c_facebook;
+    }
+    &.socN_t{
+        background-color: @c_twitter;
+    }
+    &.socN_g{
+        background-color: @c_google;
+    }
+}
+.tp_dropdown{
+    position:relative;
+    caret,
+    .caret{
+        content: "";
+        border-top: 5px solid #000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+    ul{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 3px;
+        background-color: #fff;
+        -webkit-box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+        box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+
+        display: none;
+    }
+    &.open{
+        ul{
+            display: flex;
+        }
+    }
+}
+.tp_ltcNaked{
+}
+.tp_ltcButton{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.2em;
+    padding: (1em/4) 1em;
+    &:hover,
+    &.selected{
+        background-color: rgba(0,0,0,0.2);
+        text-decoration: none;
+    }
+}
+.ltcGroupWrap{
+    .flexProperties(@fDir:row;@fAlignItem:center);
+}
+.ltcGroupWrap,
+.ltcButtonsGroup{
+    /*permite alinearlos elementospor defecto estan ala izquierda*/
+    &.alg_c{
+       .ltcFlexJustCont(@fJustCont:center);
+    }
+    &.alg_d{
+        .ltcFlexJustCont(@fJustCont:flex-start);
+    }
+    &.alg_i{
+        
+    }
+    
+    .ltcButtonsGroup,
+    .ltcPaM{
+        margin-left: 1em;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    &.dpl_block{
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        .ltcLink,
+        .ltcButtonsGroup{
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+    }
+}
+.ltcButtonsGroup{
+    .flexProperties(@fDis:inline-flex;@fDir:row);
+    border: 1px solid rgba(0,0,0,0.2);
+    /*    border-radius: 0.2em;*/
+    .ltcLink{
+        border-radius: 0;
+        border-bottom: none;
+        border-top: none;
+        border-left: 1px solid rgba(0,0,0,0.3);
+        border-right: none;
+        padding: (1em/2) 1em;
+        text-decoration: none;
+        &:hover,
+        &.selected{
+            background-color: rgba(0,0,0,0.2);
+        }
+        &:first-child{
+            border-left: none;
+        }
+    }
+    &.dpl_block_v{
+        width: 100%;
+        .ltcFlexDirec(@fDir:column);
+        .ltcFlexAlignItem(@fAlignItem:stretch);
+        .ltcLink{
+            border-radius: 0;
+            border-top: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &:first-child{
+                border-top: none;
+            }
+        }
+    }
+    &.tp_tab{
+        border:none;
+        .ltcLink{
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+                border-top: 1px solid rgba(0,0,0,0.3);
+                border-left: 1px solid rgba(0,0,0,0.3);
+                border-right: 1px solid rgba(0,0,0,0.3);
+            }
+        }
+    }
+    &.tp_list{
+        border:none;
+        .ltcLink{
+            border-radius: 0;
+            padding: 0 1em;
+            border-left: 1px solid rgba(0,0,0,0.3);
+            &:first-child{
+                border-left: none;
+            }
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+            }
+        }
+    }
+}

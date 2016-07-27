@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/07/2016, 07:08:55 AM
+    Author     : Usuario
+*/
+
+.tlc_fakeTable{
+    background-color: #ccc;
+    padding: 1px 1px 0 0;
+    .flexProperties(@fAlignItem:stretch);
+    .rw{
+        .flexProperties(@fDir:row);
+        flex: 1;
+        .rw_tl{
+            display: none;
+            background-color: #eee;
+            margin:0 0 1px 1px;
+        }
+        .rw_bd{
+            flex: 1;
+            .flexProperties(@fDir:column;@fAlignItem:stretch);
+        }
+        .cell{
+            flex: 1;
+            background-color: #fff;
+            margin:0 0 1px 1px;
+            padding: 0.3em;
+        }
+    }
+    .tbl_header{
+
+        .rw{
+            .flexProperties(@fDir:row;@fAlignItem:stretch);
+            .cell{
+                background-color: #eee;
+            }
+        }
+    }
+    .tbl_body{
+        .flexProperties(@fDir:row;@fAlignItem:stretch);
+        flex: 1;
+        .rw{
+            &:first-child{
+                .cell{
+                }
+            }
+            .cell{
+                &:last-child{
+                }
+            }
+        }
+    }
+    .dpl_v{
+
+    }
+}
