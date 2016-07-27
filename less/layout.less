@@ -1,0 +1,99 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jun 30, 2016, 8:20:15 AM
+    Author     : jaime
+*/
+
+.ltcLayoutWrap{
+
+    overflow: auto;
+    border: 2px solid #f00;
+    .flexProperties;
+    &.tp_centered{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        .ltcFlexJustCont;
+        .ltcFlexAlignItem;
+    }
+    &.tp_sheet{
+        .ltcFlexJustCont;
+        .ltcFlexDirec;
+    }
+    &.tp_justify{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        .ltcFlexAlignItem(stretch);
+    }
+    &.dpl_R{
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+.ltcLyI{
+    /*    border: 1px solid #f00;*/
+    .flexProperties(@fAlignItem:stretch);
+    &.scroll{
+        .ltcLyI{
+            display: block;
+        }
+    }
+    &.shk_tabs{
+        .ltcLyI[aria-hidden*="false"],
+        .ltcLyI[aria-hidden*="true"]{
+            display: -ms-flexbox !important;
+            display: -webkit-flex !important;
+            display: flex !important;
+        }
+    }
+    .shk_tabs_btn,
+    .shk_bhb_btn{
+        display: none;
+        width: 100%;
+    }
+    .ltcLyCP{
+        height: 100%;
+        width: 100%;
+    }
+    &.dpl_R{
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    /*    &.ltcColumn{
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }*/
+    &.centeredBouth{
+        .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        .ltcLyCP{
+            height: auto;
+            width: auto;
+        }
+    }
+
+
+}
+.fixBouth{
+    /*        -webkit-align-items: stretch;
+            -ms-flex-align: stretch;
+            align-items: stretch;*/
+
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.scroll{
+    overflow: auto;
+}

@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/07/2016, 10:32:52 AM
+    Author     : Usuario
+*/
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (max-width: 768px) {
+    /*    .ltcLayoutWrap{
+            height: auto;
+        }*/
+    .shk_control_area{
+        .shk_bhb_btn{
+            display: inline-flex;
+        }
+    }
+    .ltcLayoutWrap{
+        &.tp_sheet{
+            >.ltcLyI{
+                flex: 1;
+            }
+        }
+    }
+    .ltcLyI{
+        width:inherit !important;
+        &.dpl_R{
+            .ltcFlexDirec(@fDir:column);
+        }
+        &.shk_bhb{
+            position: absolute;
+            background-color: #f00;
+            top: 0;
+            display: none;
+            /*bottom: 0;
+            width: 50%;*/
+            &:after{
+                /*                content: "\e900";
+                                position: absolute;
+                                height: 2em;
+                                width: 2em;
+                                background-color: #0f0;
+                                top:0;
+                                border-radius: 2em;
+                                cursor: pointer;*/
+            }
+            &.open{
+                display: initial;
+            }
+        }
+        &.shk_tabs{
+            .shk_tabs_btn{
+                .flexDisplay(@fDis:flex);
+            }
+            .ltcLyI[aria-hidden*="true"]{
+                display: none !important;
+            }
+        }
+    }
+    .tlc_fakeTable{
+        .ltcFlexDirec;
+        .tbl_body,
+        .tbl_header{
+            .ltcFlexDirec(@fDir:column);
+            .rw{
+                .ltcFlexAlignItem(@fAlignItem:stretch);
+                .rw_tl{
+                    .flexProperties(@fJustCont:center;@fAlignItem:center);
+                    width: 2em;
+                    white-space: nowrap;
+                    span{
+                        -moz-transform: rotate(270deg);
+                        -webkit-transform: rotate(270deg);
+                        -o-transform: rotate(270deg);
+                        -ms-transform: rotate(270deg);
+                        transform: rotate(270deg);
+                    }
+                }
+                .rw_bd{
+                    flex: 1;
+                }
+            }
+        }
+        /*ocultamos el titulo general para hacer visibles los titulos de cada celda*/
+        .tbl_header{
+            display: none;
+        }
+    }
+
+}
+/*@media only screen and (orientation: landscape) {
+    body {
+        background-color: lightblue;
+    }
+}*/
