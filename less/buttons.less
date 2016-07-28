@@ -42,23 +42,8 @@ and open the template in the editor.
     }
     .ltcLabel{
     }
-    /*esto hay ke ponerlo en extendidos*/
-    &.socN_f,&.socN_t,&.socN_g{
-        height: 3em;
-        width: 3em;
-        color: #fff;
-        margin-left: 1em;
-    }
-    &.socN_f{
-        background-color: @c_facebook;
-    }
-    &.socN_t{
-        background-color: @c_twitter;
-    }
-    &.socN_g{
-        background-color: @c_google;
-    }
-}
+    
+    
 .tp_dropdown{
     position:relative;
     caret,
@@ -139,65 +124,20 @@ and open the template in the editor.
 }
 .ltcButtonsGroup{
     .flexProperties(@fDis:inline-flex;@fDir:row);
-    border: 1px solid rgba(0,0,0,0.2);
     /*    border-radius: 0.2em;*/
-    .ltcLink{
-        border-radius: 0;
-        border-bottom: none;
-        border-top: none;
-        border-left: 1px solid rgba(0,0,0,0.3);
-        border-right: none;
-        padding: (1em/2) 1em;
-        text-decoration: none;
-        &:hover,
-        &.selected{
-            background-color: rgba(0,0,0,0.2);
-        }
-        &:first-child{
-            border-left: none;
-        }
-    }
+    
     &.dpl_block_v{
         width: 100%;
         .ltcFlexDirec(@fDir:column);
         .ltcFlexAlignItem(@fAlignItem:stretch);
-        .ltcLink{
-            border-radius: 0;
-            border-top: 1px solid rgba(0,0,0,0.3);
-            border-left: none;
-            &:first-child{
-                border-top: none;
-            }
-        }
+        
     }
-    &.tp_tab{
+    &.tp_tab
+    {
         border:none;
-        .ltcLink{
-            border-radius: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.3);
-            border-left: none;
-            &.selected,
-            &.ui-state-active{
-                border-bottom: none;
-                border-top: 1px solid rgba(0,0,0,0.3);
-                border-left: 1px solid rgba(0,0,0,0.3);
-                border-right: 1px solid rgba(0,0,0,0.3);
-            }
-        }
-    }
+     }
     &.tp_list{
         border:none;
-        .ltcLink{
-            border-radius: 0;
-            padding: 0 1em;
-            border-left: 1px solid rgba(0,0,0,0.3);
-            &:first-child{
-                border-left: none;
-            }
-            &.selected,
-            &.ui-state-active{
-                border-bottom: none;
-            }
-        }
+        
     }
 }

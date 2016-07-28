@@ -14,8 +14,81 @@ and open the template in the editor.
 .leftSidebar{
 }
 .mainArea{
-    
+
 }
 .footer{
-    
+
 }
+/*Diseño de botones basicos*/
+.tp_ltcButton{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.2em;
+    padding: (1em/4) 1em;
+    &:hover,
+        &.selected{
+        background-color: rgba(0,0,0,0.2);
+        text-decoration: none;
+    }
+}
+/*end diseño de botones basicos*/
+/*Diseño de grupo de botones basicos*/
+.ltcButtonsGroup{
+    border: 1px solid rgba(0,0,0,0.2);
+    .ltcLink{
+        border-radius: 0;
+        border-bottom: none;
+        border-top: none;
+        border-left: 1px solid rgba(0,0,0,0.3);
+        border-right: none;
+        padding: (1em/2) 1em;
+        text-decoration: none;
+        &:hover,
+            &.selected{
+            background-color: rgba(0,0,0,0.2);
+        }
+        &:first-child{
+            border-left: none;
+        }
+    }
+    /*Diseño de listas de botones*/
+    &.dpl_block_v
+    {
+        .ltcLink{
+            border-radius: 0;
+            border-top: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &:first-child{
+                border-top: none;
+            }
+        }
+    }
+    /*Diseño de botones tabs*/
+    &.tp_tab{
+        .ltcLink{
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+                border-top: 1px solid rgba(0,0,0,0.3);
+                border-left: 1px solid rgba(0,0,0,0.3);
+                border-right: 1px solid rgba(0,0,0,0.3);
+            }
+        }
+    }
+    &.tp_list{
+        .ltcLink{
+            border-radius: 0;
+            padding: 0 1em;
+            border-left: 1px solid rgba(0,0,0,0.3);
+            &:first-child{
+                border-left: none;
+            }
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+            }
+        }
+    }
+/*end Diseño de grupo de botones basicos*/
