@@ -24,6 +24,11 @@ and open the template in the editor.
                 flex: 1;
             }
         }
+        &.tp_justify{
+            position: inherit;
+            height: inherit;
+            width: inherit;
+        }
     }
     .ltcLyI{
         width:inherit !important;
@@ -87,6 +92,12 @@ and open the template in the editor.
         /*ocultamos el titulo general para hacer visibles los titulos de cada celda*/
         .tbl_header{
             display: none;
+        }
+    }
+    .tlcCWall{
+        .ltcFlexDirec(@fDir:column);
+        .CWCard{
+            flex:0 0 100%;
         }
     }
 
