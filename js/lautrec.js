@@ -1,7 +1,11 @@
 $(document).ready(function(){
-    $('body').on('click', '.test-lautrec-click', function() {
-        console.log('Test Lautrec JS click');
+    // $('body').on('click', '.test-lautrec-click', function() {
+    //     console.log('Test Lautrec JS click');
+    // });
+    $('body').on('click', '.tp_dropdown', function () {
+        $(this).toggleClass('open', 0, 'easeOutSine');
     });
+
 
     var observeDOM = (function(){
         var MutationObserver = window.MutationObserver || window.WebKitMutationObserver, eventListenerSupported = window.addEventListener;
@@ -27,5 +31,6 @@ $(document).ready(function(){
     // Observe a specific DOM element:
     observeDOM( $('body')[0] ,function(){
         console.log('dom changed');
+        $('.ltcTabs,.shk_tabs').tabs();
     });
 });

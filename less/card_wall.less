@@ -1,6 +1,6 @@
 .tlcCWall{
     .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:stretch);
-    padding:0 0 1em 1em;
+    padding:0 0 @CWall_p @CWall_p;
     &.CWColum_1{
         .CWCard{
             flex:0 0 100%;
@@ -53,6 +53,6 @@
     }
     .CWCard{
         .flexProperties(@fDir:column;@fAlignItem:stretch);
-        padding:1em 1em 0 0;
+        padding:@CWall_p @CWall_p 0 0;
     }
 }
