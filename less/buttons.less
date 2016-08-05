@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Jun 28, 2016, 2:43:41 PM
     Author     : jaime
 */
@@ -18,7 +18,7 @@ and open the template in the editor.
     cursor:pointer;
     white-space: nowrap;
     .animation;
-    .flexProperties(@fDis:inline-flex;@fDir:row;@fJustCont:flex-start;@fAlignItem:center);
+    .flexProperties(@fDis:inline-flex;@fDir:row;@fWrap:wrap;@fJustCont:flex-start;@fAlignItem:center);
     a{
         text-decoration: none;
     }
@@ -43,10 +43,10 @@ and open the template in the editor.
     .ltcLabel{
     }
 
-}   
+}
 .tp_dropdown{
     position:relative;
-    
+
     ul{
         position: absolute;
         top: 100%;
@@ -61,6 +61,14 @@ and open the template in the editor.
     &.open{
         ul{
             display: flex;
+        }
+    }
+    &.dpl_l{
+        ul{
+            top: 0;
+            left: 100%;
+            margin-top: 0;
+            margin-left: 3px;
         }
     }
 }

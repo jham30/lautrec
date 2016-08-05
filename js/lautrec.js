@@ -29,8 +29,9 @@ $(document).ready(function(){
     })();
 
     // Observe a specific DOM element:
-    observeDOM( $('body')[0] ,function(){
-        console.log('dom changed');
-        $('.ltcTabs,.shk_tabs').tabs();
-    });
+     observeDOM( $('body')[0] ,function(){
+    //     console.log('dom changed');
+         $('.ltcTabs,.shk_tabs').tabs();
+         $('.ltcButtonsGroup').menu();
+     });
 });
