@@ -2,10 +2,16 @@ $(document).ready(function(){
     // $('body').on('click', '.test-lautrec-click', function() {
     //     console.log('Test Lautrec JS click');
     // });
-    $('body').on('click', '.tp_dropdown', function () {
-        $(this).toggleClass('open', 0, 'easeOutSine');
+    $('body').on('click', '.tp_dropdown.open', function () {
+        $( this ).removeClass( 'aniIn' ).addClass( 'aniOut' );
+        setTimeout(() => {
+            $( this ).removeClass( 'open' );
+        }, 600 );
     });
-
+    $('body').on('click', '.tp_dropdown:not(.open)', function () {
+        $( this ).removeClass( 'aniOut' ).addClass( 'aniIn' );
+        $( this ).addClass( 'open' );
+    });
 
     var observeDOM = (function(){
         var MutationObserver = window.MutationObserver || window.WebKitMutationObserver, eventListenerSupported = window.addEventListener;
@@ -29,9 +35,8 @@ $(document).ready(function(){
     })();
 
     // Observe a specific DOM element:
-     observeDOM( $('body')[0] ,function(){
-    //     console.log('dom changed');
-         $('.ltcTabs,.shk_tabs').tabs();
-         $('.ltcButtonsGroup').menu();
-     });
+    observeDOM( $('body')[0] ,function(){
+        //     console.log('dom changed');
+        $('.ltcTabs,.shk_tabs').tabs();
+    });
 });
