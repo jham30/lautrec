@@ -55,12 +55,20 @@ and open the template in the editor.
         background-color: #fff;
         -webkit-box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
         box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
-
+        .animated;
         display: none;
+    }
+    caret,
+    .caret{
+        content: "";
+        margin: 0 0.5em;
+        border-top: 5px solid #000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
     }
     &.open{
         ul{
-            display: flex;
+            .flexDisplay
         }
     }
     &.dpl_l{
@@ -69,6 +77,22 @@ and open the template in the editor.
             left: 100%;
             margin-top: 0;
             margin-left: 3px;
+        }
+        caret,
+        .caret{
+            border-top: 5px solid transparent;
+            border-left: 5px solid #000;
+            border-bottom: 5px solid transparent;
+        }
+        &.aniOut{
+            ul{
+                .bounceOutUp;
+            }
+        }
+        &.aniIn{
+            ul{
+                .bounceInLeft;
+            }
         }
     }
 }

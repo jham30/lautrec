@@ -3,6 +3,17 @@ module.exports = function (grunt) {
     grunt.initConfig({
         buildDir: 'dist',
         srcDir: '.',
+        babel: {
+            options: {
+                sourceMap: true,
+                presets: ['es2015']
+            },
+            dist: {
+                files: {
+                    '<%= buildDir %>/lautrec.min.js': ['<%= srcDir %>/js/**/*.js']
+                }
+            }
+        },
         clean: {
             clean: ['<%= buildDir %>']
         },
@@ -21,6 +32,7 @@ module.exports = function (grunt) {
                     src: ['Gruntfile.js', '<%= srcDir %>/js/**/*.js', '!<%= srcDir %>/test/**/*.js']
                 },
                 options: {
+                    esversion: 6,
                     globals: {
                         jQuery: true
                     }
@@ -50,6 +62,9 @@ module.exports = function (grunt) {
             }
         },
         uglify: {
+            options: {
+                beautify: true
+            },
             my_target: {
                 files: {
                     '<%= buildDir %>/lautrec.min.js': ['<%= srcDir %>/js/**/*.js']
@@ -58,6 +73,7 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -65,6 +81,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-mkdir');
 
-    grunt.registerTask('build', ['jshint', 'mkdir', 'less', 'uglify']);
+    grunt.registerTask('build', ['jshint', 'mkdir', 'less', 'babel']);
     grunt.registerTask('run', ['build']);
 };
