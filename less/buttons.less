@@ -157,4 +157,64 @@ and open the template in the editor.
         border:none;
 
     }
+    &.tp_iconBlock{
+        .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:stretch);
+        margin:0 0 @CWall_p @CWall_p;
+        &.IBColum_1{
+            .ltcLink{
+                flex:0 0 100%;
+            }
+        }
+        &.IBColum_2{
+            .ltcLink{
+                flex:0 0 100%/2;
+            }
+        }
+        &.IBColum_3{
+            .ltcLink{
+                flex:0 0 100%/3;
+            }
+        }
+        &.IBColum_4{
+            .ltcLink{
+                flex:0 0 100%/4;
+            }
+        }
+        &.IBColum_5{
+            .ltcLink{
+                flex:0 0 100%/5;
+            }
+        }
+        &.IBColum_6{
+            .ltcLink{
+                flex:0 0 100%/6;
+            }
+        }
+        &.IBColum_7{
+            .ltcLink{
+                flex:0 0 100%/7;
+            }
+        }
+        &.IBColum_8{
+            .ltcLink{
+                flex:0 0 100%/8;
+            }
+        }
+        &.IBColum_9{
+            .ltcLink{
+                flex:0 0 100%/9;
+            }
+        }
+        &.IBColum_10{
+            .ltcLink{
+                flex:0 0 100%/10;
+            }
+        }
+        .ltcLink{
+            // .flexProperties(@fDir:column;@fAlignItem:stretch);
+            margin: @CWall_p @CWall_p 0 0;
+            border: 1px solid rgba(0,0,0,0.3);
+            .ltcFlexDirec(column);
+        }
+    }
 }
