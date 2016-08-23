@@ -14,80 +14,32 @@ input[type="checkbox"]{
     }
 }
 .ltcFormItem{
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    input{
+    .flexProperties(@fDis:inline-flex;@fDir:row);
+    input,
+    textarea{
         border: 1px solid rgba(0,0,0,0.2);
         padding: 1rem/4 1rem/2;
         flex: 1;
     }
+    label,
+    ltcLabel{
+    }
+    &.dpl_block{
+        .flexDisplay;
+    }
     &.dpl_v{
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+        .ltcFlexDirec(column);
+        .ltcFlexAlignItem(stretch);
     }
     .tp_buttonMix{
         border: 1px solid rgba(0,0,0,0.2);
 
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-        -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -webkit-align-content: flex-start;
-        -ms-flex-line-pack: start;
-        align-content: flex-start;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+        .flexProperties(@fDir:row;@fAlignItem:stretch);
         .ltcInputComplement{
             border-left: 1px solid rgba(0,0,0,0.2);
             padding: 0 1em;
 
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -webkit-flex-wrap: nowrap;
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            -webkit-justify-content: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-align-content: flex-start;
-            -ms-flex-line-pack: start;
-            align-content: flex-start;
-            -webkit-align-items: center;
-            -ms-flex-align: center;
-            align-items: center;
+            .flexProperties(@fDir:row;@fAlignItem:center);
             &:first-child{
                 border: none;
             }
