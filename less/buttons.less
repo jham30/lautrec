@@ -57,6 +57,7 @@ and open the template in the editor.
         box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
         .animated;
         display: none;
+        z-index: 1;
     }
     caret,
     .caret{
@@ -213,5 +214,31 @@ and open the template in the editor.
             border: 1px solid rgba(0,0,0,0.3);
             .ltcFlexDirec(column);
         }
+    }
+}
+.ltcSwitch{
+    .flexProperties(@fAlignItem:flex-end);
+    width: 2.5em;
+    border-radius: 1em;
+    cursor: pointer;
+    &:after{
+        content: "";
+        height: 1em;
+        width: 1em;
+        display: block;
+        border-radius: 1em;
+        background-color: #fff;
+        .animation;
+    }
+    &.checked{
+        .ltcFlexAlignItem(flex-start);
+        background-color: @c_lemon_green;
+        border: 2px solid @c_lemon_green;
+
+    }
+    &.unchecked{
+        background-color: @c_lht_grey;
+        border: 2px solid @c_lht_grey;
+
     }
 }
