@@ -13,6 +13,28 @@ $(document).ready(function(){
         $( this ).addClass( 'open' );
     });
 
+    $('body').on('click', '.shk_bhb_1 .shk_btn_c', function () {
+        $( ".shk_bhb_1" ).removeClass( 'aniIn' ).addClass( 'aniOut' );
+        setTimeout(() => {
+            $( ".shk_bhb_1" ).removeClass( 'open' );
+        }, 600 );
+    });
+    $('body').on('click', '.shk_bhb_2 .shk_btn_c', function () {
+        $( ".shk_bhb_2" ).removeClass( 'aniIn' ).addClass( 'aniOut' );
+        setTimeout(() => {
+            $( ".shk_bhb_2" ).removeClass( 'open' );
+        }, 600 );
+    });
+    $('body').on('click', '.shk_bhb_btn.btn_1', function () {
+        $( ".shk_bhb_1" ).removeClass( 'aniOut' ).addClass( 'aniIn' );
+        $( ".shk_bhb_1" ).addClass( 'open' );
+    });
+    $('body').on('click', '.shk_bhb_btn.btn_2', function () {
+        $( ".shk_bhb_2" ).removeClass( 'aniOut' ).addClass( 'aniIn' );
+        $( ".shk_bhb_2" ).addClass( 'open' );
+    });
+
+
     var observeDOM = (function(){
         var MutationObserver = window.MutationObserver || window.WebKitMutationObserver, eventListenerSupported = window.addEventListener;
 
