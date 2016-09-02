@@ -82,35 +82,7 @@ and open the template in the editor.
             margin-left: 0 !important;
         }
     }
-    .tlc_fakeTable{
-        .ltcFlexDirec;
-        .tbl_body,
-        .tbl_header{
-            .ltcFlexDirec(@fDir:column);
-            .rw{
-                .ltcFlexAlignItem(@fAlignItem:stretch);
-                .rw_tl{
-                    .flexProperties(@fJustCont:center;@fAlignItem:center);
-                    width: 2em;
-                    white-space: nowrap;
-                    span{
-                        -moz-transform: rotate(270deg);
-                        -webkit-transform: rotate(270deg);
-                        -o-transform: rotate(270deg);
-                        -ms-transform: rotate(270deg);
-                        transform: rotate(270deg);
-                    }
-                }
-                .rw_bd{
-                    flex: 1;
-                }
-            }
-        }
-        /*ocultamos el titulo general para hacer visibles los titulos de cada celda*/
-        .tbl_header{
-            display: none;
-        }
-    }
+    
     .tlcCWall{
         .ltcFlexDirec(@fDir:column);
         .ltcFlexwrap(@fWrap:nowrap);

@@ -48,10 +48,33 @@ Author     : jaime
             display: flex !important;
         }
     }
+    &.shk_bhb{
+        // position: absolute;
+        // z-index: 1;
+        // top: 0;
+        // width: 100%;
+        .animated;
+        display: none;
+        .shk_btn_c{
+        }
+        &:after{
+        }
+        &.open{
+            display: initial;
+        }
+        &.aniOut{
+            .fadeOutLeft;
+        }
+        &.aniIn{
+            .fadeInDown;
+        }
+    }
+    .shk_control_area{
+
+    }
     .shk_tabs_btn,
     .shk_bhb_btn{
-        display: none;
-        width: 100%;
+
     }
     .ltcLyCP{
         height: 100%;
@@ -85,6 +108,19 @@ Author     : jaime
     .ltcLayoutWrap{
         .dpl_R{
             .ltcFlexDirec;
+        }
+    }
+    .ltcLyI{
+        &.shk_bhb{
+            position: relative;
+            width: inherit;
+            display: inherit;
+            .shk_btn_c{
+                display: none;
+            }
+        }
+        .shk_control_area{
+            display: none;
         }
     }
 }
