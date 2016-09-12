@@ -33,7 +33,7 @@ Author     : jaime
 }
 .ltcLyI{
     /*    border: 1px solid #f00;*/
-    .flexProperties(@fAlignItem:stretch);
+    .flexProperties(@fAlignItem:stretch;@fWrap:wrap);
     min-height: -webkit-min-content;
     &.scroll{
         .ltcLyI{
@@ -49,10 +49,6 @@ Author     : jaime
         }
     }
     &.shk_bhb{
-        // position: absolute;
-        // z-index: 1;
-        // top: 0;
-        // width: 100%;
         .animated;
         display: none;
         .shk_btn_c{
@@ -68,13 +64,6 @@ Author     : jaime
         &.aniIn{
             .fadeInDown;
         }
-    }
-    .shk_control_area{
-
-    }
-    .shk_tabs_btn,
-    .shk_bhb_btn{
-
     }
     .ltcLyCP{
         height: 100%;
@@ -92,10 +81,6 @@ Author     : jaime
     }
 }
 .fixBouth{
-    /*        -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;*/
-
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -106,8 +91,21 @@ Author     : jaime
 /*responsive*/
 @media (min-width: 768px) {
     .ltcLayoutWrap{
+        /*acomoda en columnas cada ltcLyIdentro de el portador de la clase*/
         .dpl_R{
             .ltcFlexDirec;
+            .ltcLyI{
+                /*hace que el ltcLyI portador ajuste su tamaño al ancho total y divide en arriba y abajo los ltcLyI anteriores y posteriores, cen pantallas medianas*/
+                &.sm{
+                    flex-basis: 100%;
+                }
+            }
+            /*reparte el ancho total en partes iuales para cada ltcLyI hijo*/
+            &.LySW{
+                .ltcLyI{
+                    flex: 1;
+                }
+            }
         }
     }
     .ltcLyI{
@@ -126,7 +124,16 @@ Author     : jaime
 }
 
 @media (min-width: 992px) {
+    .ltcLayoutWrap{
+        .dpl_R{
+            .ltcLyI{
 
+                &.sm{
+                    flex-basis: auto;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1200px) {
