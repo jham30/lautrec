@@ -68,6 +68,9 @@ Author     : jaime
     .ltcLyCP{
         height: 100%;
         width: 100%;
+        &.scrollOn{
+            overflow: auto;
+        }
     }
     &.centeredBouth{
         .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
@@ -91,6 +94,9 @@ Author     : jaime
 /*responsive*/
 @media (min-width: 768px) {
     .ltcLayoutWrap{
+        .ltcLyI{
+            min-height:inherit;
+        }
         /*acomoda en columnas cada ltcLyIdentro de el portador de la clase*/
         .dpl_R{
             .ltcFlexDirec;
