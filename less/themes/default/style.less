@@ -111,7 +111,45 @@ and open the template in the editor.
   .ltcFormItem{
     margin-bottom: 1em;
   }
-
+}
+/*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
+@form_radius:3px;
+.ltcFormItem{
+    input[type="text"],
+    button,
+    select,
+    textarea,
+    .ltcInputComplement{
+        background-color: rgba(0,0,0,0.1);
+        padding: 1rem/4 1rem/2;
+        border: none;
+    }
+    >input[type="text"],
+    >button,
+    >textarea,
+    >select{
+        border-radius: @form_radius;
+    }
+    .tp_buttonMix{
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+            &:first-child{
+                border-top-left-radius: @form_radius;
+                border-bottom-left-radius: @form_radius;
+            }
+        }
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+            &:last-child{
+                border-top-right-radius: @form_radius;
+                border-bottom-right-radius: @form_radius;
+            }
+        }
+    }
 }
 /*end Diseño de grupo de botones basicos*/
 /*card wall cofiguration*/

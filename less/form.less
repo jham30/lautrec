@@ -16,12 +16,12 @@ input[type="checkbox"]{
 .ltcFormItem{
     .flexProperties(@fDis:inline-flex;@fDir:row);
     input,
+    select,
     textarea{
-        padding: 1rem/4 1rem/2;
         flex: 1;
     //tiene que ser Movido a un tema
     /*background-color: rgba(0, 0, 0, 0.07);*/
-  border: 1px solid rgba(0, 0, 0, 0.1);
+    // border: 1px solid rgba(0, 0, 0, 0.1);
     }
     label,
     ltcLabel{
@@ -34,7 +34,7 @@ input[type="checkbox"]{
         .ltcFlexAlignItem(stretch);
     }
     .tp_buttonMix{
-        border: 1px solid rgba(0,0,0,0.2);
+        //border: 1px solid rgba(0,0,0,0.2);
 
         .flexProperties(@fDir:row;@fAlignItem:stretch);
         .ltcInputComplement{
@@ -51,9 +51,12 @@ input[type="checkbox"]{
             border-top: none;
             border-right: none;
             border-left: 1px solid rgba(0,0,0,0.2);
+            &:first-child{
+                border: none;
+            }
         }
         button{
-            background-color: #ccc;
+        //    background-color: #ccc;
             border: none;
             cursor: pointer;
         }
