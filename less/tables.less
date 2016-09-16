@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 18/07/2016, 07:08:55 AM
+    Author     : Usuario
+*/
+
+.tlc_fakeTable{
+    background-color: #ccc;
+    padding: 1px 1px 0 0;
+    .flexProperties(@fDir:row;@fAlignItem:stretch);
+    .rw{
+        .flexProperties(@fDir:row;@fAlignItem:stretch);
+
+        .rw_tl{
+            background-color: #eee;
+            margin:0 0 1px 1px;
+            width: 2em;
+            white-space: nowrap;
+            .flexProperties(@fJustCont:center;@fAlignItem:center);
+            span{
+                -moz-transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+                -o-transform: rotate(270deg);
+                -ms-transform: rotate(270deg);
+                transform: rotate(270deg);
+            }
+        }
+        .rw_bd{
+            flex: 1;
+            .flexProperties(@fDir:column;@fAlignItem:stretch);
+        }
+        .cell{
+            flex: 1;
+            background-color: #fff;
+            margin:0 0 1px 1px;
+            padding: 0.3em;
+        }
+    }
+    .tbl_header{
+        display: none;
+    }
+    .tbl_body{
+        .flexProperties(@fAlignItem:stretch);
+        flex: 1;
+        .rw{
+            &:first-child{
+                .cell{
+                }
+            }
+            .cell{
+                &:last-child{
+                }
+            }
+        }
+    }
+    .dpl_v{
+
+    }
+}
+/*responsive*/
+@media (min-width: 768px) {
+    .tlc_fakeTable{
+        .ltcFlexDirec(column);
+        .tbl_body{
+            .ltcFlexDirec(row);
+        }
+        .rw{
+            flex: 1;
+            .rw_tl{
+                display: none;
+            }
+        }
+        .tbl_header{
+            display: block;
+            &.rw{
+                .flexProperties(@fDir:row;@fAlignItem:stretch);
+                .cell{
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+.tlc_fakeTable{
+    .tbl_body,
+    .tbl_header{
+        .rw{
+            .ltcFlexAlignItem(@fAlignItem:stretch);
+            .rw_tl{
+
+            }
+            .rw_bd{
+                flex: 1;
+            }
+        }
+    }
+    /*ocultamos el titulo general para hacer visibles los titulos de cada celda*/
+
+}

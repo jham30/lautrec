@@ -1,0 +1,147 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+Created on : Jun 30, 2016, 8:20:15 AM
+Author     : jaime
+*/
+
+.ltcLayoutWrap{
+
+    overflow: auto;
+    border: 2px solid #f00;
+    .flexProperties;
+    &.tp_centered{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        .ltcFlexJustCont;
+        .ltcFlexAlignItem;
+    }
+    &.tp_sheet{
+        .ltcFlexJustCont;
+        .ltcFlexDirec;
+    }
+    &.tp_justify{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        .ltcFlexAlignItem(stretch);
+    }
+}
+.ltcLyI{
+    /*    border: 1px solid #f00;*/
+    .flexProperties(@fAlignItem:stretch);
+    min-height: -webkit-min-content;
+    &.scroll{
+        .ltcLyI{
+            display: block;
+        }
+    }
+    &.shk_tabs{
+        .ltcLyI[aria-hidden*="false"],
+        .ltcLyI[aria-hidden*="true"]{
+            display: -ms-flexbox !important;
+            display: -webkit-flex !important;
+            display: flex !important;
+        }
+    }
+    &.shk_bhb{
+        .animated;
+        display: none;
+        .shk_btn_c{
+        }
+        &:after{
+        }
+        &.open{
+            display: initial;
+        }
+        &.aniOut{
+            .fadeOutLeft;
+        }
+        &.aniIn{
+            .fadeInDown;
+        }
+    }
+    .ltcLyCP{
+        height: 100%;
+        width: 100%;
+        &.scrollOn{
+            overflow: auto;
+        }
+    }
+    &.centeredBouth{
+        .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        .ltcLyCP{
+            height: auto;
+            width: auto;
+        }
+    }
+}
+.fixBouth{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.scroll{
+    overflow: auto;
+}
+/*responsive*/
+@media (min-width: 768px) {
+    .ltcLayoutWrap{
+        .ltcLyI{
+            min-height:inherit;
+        }
+        /*acomoda en columnas cada ltcLyIdentro de el portador de la clase*/
+        .dpl_R{
+            .ltcFlexDirec;
+            .ltcLyI{
+                /*hace que el ltcLyI portador ajuste su tamaño al ancho total y divide en arriba y abajo los ltcLyI anteriores y posteriores, cen pantallas medianas*/
+                &.sm{
+                    flex-basis: 100%;
+                }
+            }
+            /*reparte el ancho total en partes iguales para cada ltcLyI hijo*/
+            &.LySW{
+                .ltcLyI{
+                    flex: 1;
+                }
+            }
+        }
+    }
+    .ltcLyI{
+        &.shk_bhb{
+            position: relative;
+            width: inherit;
+            display: inherit;
+            .shk_btn_c{
+                display: none;
+            }
+        }
+        .shk_control_area{
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .ltcLayoutWrap{
+        .dpl_R{
+            .ltcLyI{
+
+                &.sm{
+                    flex-basis: auto;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+}

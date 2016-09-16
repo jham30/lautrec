@@ -1,0 +1,157 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 6/07/2016, 09:29:22 AM
+    Author     : Usuario
+*/
+@import url('skin/default.less');
+
+.header{
+}
+.leftSidebar{
+}
+.mainArea{
+
+}
+.footer{
+
+}
+/*Diseño de botones basicos*/
+.tp_ltcButton{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.2em;
+    padding: (1em/4) 1em;
+    &:hover,
+        &.selected{
+        background-color: rgba(0,0,0,0.2);
+        text-decoration: none;
+    }
+}
+/*end diseño de botones basicos*/
+/*Diseño de grupo de botones basicos*/
+.ltcButtonsGroup{
+    // border: 1px solid rgba(0,0,0,0.2);
+    .ltcLink{
+        border-radius: 0;
+        border-bottom: none;
+        border-top: none;
+        border-left: 1px solid rgba(0,0,0,0.3);
+        border-right: none;
+        padding: (1em/2) 1em;
+        text-decoration: none;
+        &:hover,
+            &.selected{
+            background-color: rgba(0,0,0,0.2);
+        }
+        &:first-child{
+            border-left: none;
+        }
+    }
+    /*Diseño de listas de botones*/
+    &.dpl_block_v{
+        .ltcLink{
+            border-radius: 0;
+            border-top: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &:first-child{
+                border-top: none;
+            }
+        }
+    }
+    /*Diseño de botones tabs*/
+    &.tp_tab{
+        .ltcLink{
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0,0,0,0.3);
+            border-left: none;
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+                border-top: 1px solid rgba(0,0,0,0.3);
+                border-left: 1px solid rgba(0,0,0,0.3);
+                border-right: 1px solid rgba(0,0,0,0.3);
+            }
+        }
+    }
+    &.tp_list{
+        .ltcLink{
+            border-radius: 0;
+            padding: 0 1em;
+            border-left: 1px solid rgba(0,0,0,0.3);
+            &:first-child{
+                border-left: none;
+            }
+            &.selected,
+            &.ui-state-active{
+                border-bottom: none;
+            }
+        }
+    }
+}
+/* botones dropdown*/
+.tp_dropdown{
+
+}
+/* botones con alineación diferente*/
+.tp_ltcButton{
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.2em;
+    padding: (1em/4) 1em;
+    &:hover,
+        &.selected{
+        background-color: rgba(0,0,0,0.2);
+        text-decoration: none;
+    }
+}
+/* formularios*/
+.ltcFormgrup{
+  .ltcFormItem{
+    margin-bottom: 1em;
+  }
+}
+/*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
+@form_radius:3px;
+.ltcFormItem{
+    input[type="text"],
+    button,
+    select,
+    textarea,
+    .ltcInputComplement{
+        background-color: rgba(0,0,0,0.1);
+        padding: 1rem/4 1rem/2;
+        border: none;
+    }
+    >input[type="text"],
+    >button,
+    >textarea,
+    >select{
+        border-radius: @form_radius;
+    }
+    .tp_buttonMix{
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+            &:first-child{
+                border-top-left-radius: @form_radius;
+                border-bottom-left-radius: @form_radius;
+            }
+        }
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+            &:last-child{
+                border-top-right-radius: @form_radius;
+                border-bottom-right-radius: @form_radius;
+            }
+        }
+    }
+}
+/*end Diseño de grupo de botones basicos*/
+/*card wall cofiguration*/
+/*set a space betwin each card*/
+@CWall_p:1em;

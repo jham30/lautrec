@@ -1,0 +1,244 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Jun 28, 2016, 2:43:41 PM
+    Author     : jaime
+*/
+/*.fix_H{
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}*/
+.ltcLink
+{
+    text-decoration: none;
+    cursor:pointer;
+    white-space: nowrap;
+    .animation;
+    .flexProperties(@fDis:inline-flex;@fDir:row;@fWrap:wrap;@fJustCont:flex-start;@fAlignItem:center);
+    a{
+        text-decoration: none;
+    }
+    &:hover,
+        &.selected{
+        text-decoration: underline;
+    }
+    &.order_r{
+        .ltcIcon{
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+            margin-left: 0.5em;
+        }
+    }
+    &.order_l{
+        .ltcIcon{
+        }
+    }
+    .ltcIcon{
+    }
+    .ltcLabel{
+    }
+
+}
+.tp_dropdown{
+    position:relative;
+
+    ul{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 3px;
+        background-color: #fff;
+        -webkit-box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+        box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+        .animated;
+        display: none;
+        z-index: 1;
+    }
+    caret,
+    .caret{
+        content: "";
+        margin: 0 0.5em;
+        border-top: 5px solid #000;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+    }
+    &.open{
+        ul{
+            .flexDisplay
+        }
+    }
+    &.dpl_l{
+        ul{
+            top: 0;
+            left: 100%;
+            margin-top: 0;
+            margin-left: 3px;
+        }
+        caret,
+        .caret{
+            border-top: 5px solid transparent;
+            border-left: 5px solid #000;
+            border-bottom: 5px solid transparent;
+        }
+        &.aniOut{
+            ul{
+                .bounceOutUp;
+            }
+        }
+        &.aniIn{
+            ul{
+                .bounceInLeft;
+            }
+        }
+    }
+}
+.tp_ltcNaked{
+}
+
+.ltcGroupWrap{
+    .flexProperties(@fDir:row;@fAlignItem:center);
+}
+.ltcGroupWrap,
+.ltcButtonsGroup{
+    /*permite alinearlos elementospor defecto estan ala izquierda*/
+    &.alg_c{
+        .ltcFlexJustCont(@fJustCont:center);
+    }
+    &.alg_d{
+        .ltcFlexJustCont(@fJustCont:flex-start);
+    }
+    &.alg_i{
+
+    }
+
+    .ltcButtonsGroup,
+    .ltcPaM{
+        margin-left: 1em;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+    &.dpl_block{
+        .flexDisplay;
+        .ltcLink,
+        .ltcButtonsGroup{
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+    }
+}
+.ltcButtonsGroup{
+    .flexProperties(@fDis:inline-flex;@fDir:row);
+    /*    border-radius: 0.2em;*/
+
+    &.dpl_block_v{
+        width: 100%;
+        .ltcFlexDirec(@fDir:column);
+        .ltcFlexAlignItem(@fAlignItem:stretch);
+
+    }
+    &.tp_tab
+    {
+        border:none;
+    }
+    &.tp_list{
+        border:none;
+
+    }
+    &.tp_iconBlock{
+        .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:stretch);
+        margin:0 0 @CWall_p @CWall_p;
+        &.IBColum_1{
+            .ltcLink{
+                flex:0 0 100%;
+            }
+        }
+        &.IBColum_2{
+            .ltcLink{
+                flex:0 0 100%/2;
+            }
+        }
+        &.IBColum_3{
+            .ltcLink{
+                flex:0 0 100%/3;
+            }
+        }
+        &.IBColum_4{
+            .ltcLink{
+                flex:0 0 100%/4;
+            }
+        }
+        &.IBColum_5{
+            .ltcLink{
+                flex:0 0 100%/5;
+            }
+        }
+        &.IBColum_6{
+            .ltcLink{
+                flex:0 0 100%/6;
+            }
+        }
+        &.IBColum_7{
+            .ltcLink{
+                flex:0 0 100%/7;
+            }
+        }
+        &.IBColum_8{
+            .ltcLink{
+                flex:0 0 100%/8;
+            }
+        }
+        &.IBColum_9{
+            .ltcLink{
+                flex:0 0 100%/9;
+            }
+        }
+        &.IBColum_10{
+            .ltcLink{
+                flex:0 0 100%/10;
+            }
+        }
+        .ltcLink{
+            // .flexProperties(@fDir:column;@fAlignItem:stretch);
+            margin: @CWall_p @CWall_p 0 0;
+            border: 1px solid rgba(0,0,0,0.3);
+            .ltcFlexDirec(column);
+        }
+    }
+}
+.ltcSwitch{
+    .flexProperties(@fAlignItem:flex-end);
+    width: 2.5em;
+    border-radius: 1em;
+    cursor: pointer;
+    &:after{
+        content: "";
+        height: 1em;
+        width: 1em;
+        display: block;
+        border-radius: 1em;
+        background-color: #fff;
+        .animation;
+    }
+    &.checked{
+        .ltcFlexAlignItem(flex-start);
+        background-color: @c_lemon_green;
+        border: 2px solid @c_lemon_green;
+
+    }
+    &.unchecked{
+        background-color: @c_lht_grey;
+        border: 2px solid @c_lht_grey;
+
+    }
+}
