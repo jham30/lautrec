@@ -18,7 +18,7 @@ and open the template in the editor.
     cursor:pointer;
     white-space: nowrap;
     .animation;
-    .flexProperties(@fDis:inline-flex;@fDir:row;@fWrap:wrap;@fJustCont:flex-start;@fAlignItem:center);
+    .flexProperties(@fDis:inline-flex;@fDir:row;@fWrap:wrap;@fAlignItem:center);
     a{
         text-decoration: none;
     }
@@ -138,7 +138,7 @@ and open the template in the editor.
     }
 }
 .ltcButtonsGroup{
-    .flexProperties(@fDis:inline-flex;@fDir:row);
+    .flexProperties(@fDis:inline-flex;@fDir:row;@fWrap:wrap);
     /*    border-radius: 0.2em;*/
 
     &.dpl_block_v{
@@ -156,7 +156,7 @@ and open the template in the editor.
 
     }
     &.tp_iconBlock{
-        .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:stretch);
+        .flexProperties(@fAlignItem:stretch);
         margin:0 0 @CWall_p @CWall_p;
         &.IBColum_1{
             .ltcLink{
@@ -241,4 +241,14 @@ and open the template in the editor.
         border: 2px solid @c_lht_grey;
 
     }
+}
+/*responsive*/
+@media (min-width: 768px) {
+    .ltcButtonsGroup{
+        .ltcFlexwrap(nowrap);
+    }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
 }
