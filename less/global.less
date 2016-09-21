@@ -21,7 +21,7 @@ body{
     color: @general-font-color;
 }
 a{
-    color: #000;
+    color: @general-font-color;
 }
 *{
     box-sizing: border-box;
@@ -140,6 +140,15 @@ button{
 /*    -webkit-align-items: @fAlignItem;
     -ms-flex-align: @fAlignItem;*/
     align-items: @fAlignItem;
+}
+/*shadows*/
+*[data-ltcshw="on"]{
+    -webkit-box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+}
+*[data-ltcshw$="hover"]:hover{
+    -webkit-box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
 }
 /*animations*/
 .animation(@x:20ms)
