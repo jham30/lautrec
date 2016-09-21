@@ -14,7 +14,7 @@ input[type="checkbox"]{
     }
 }
 .ltcFormItem{
-    .flexProperties(@fDis:inline-flex;@fDir:row);
+    .flexProperties(@fDis:flex;@fDir:row);
     input,
     select,
     textarea{
@@ -35,10 +35,10 @@ input[type="checkbox"]{
     }
     .tp_buttonMix{
         //border: 1px solid rgba(0,0,0,0.2);
-
+        flex: 1;
         .flexProperties(@fDir:row;@fAlignItem:stretch);
         .ltcInputComplement{
-            border-left: 1px solid rgba(0,0,0,0.2);
+            
             padding: 0 1em;
 
             .flexProperties(@fDir:row;@fAlignItem:center);
@@ -64,14 +64,32 @@ input[type="checkbox"]{
     }
 }
 .ltcFormgrup{
-    .flexProperties(@fDir:row;@fAlignCont:flex-end;@fAlignItem:flex-end);
+    .flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
+    padding:0 0 @CWall_p @CWall_p;
+    .ltcFormItem{
+        padding:@CWall_p @CWall_p 0 0;
+        flex:0 0 100%;
+    }
     &.dpl_v{
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-        align-items: stretch;
+        .ltcFormItem{
+            .ltcFlexDirec(column);
+            .ltcFlexAlignItem(stretch);
+        }
+    }
+    // &.FGColum_1{
+    //     .ltcFormItem{
+    //         flex:0 0 100%;
+    //     }
+    // }
+    &.FGColum_2{
+        .ltcFormItem{
+            flex:0 0 100%/2;
+        }
+    }
+    &.FGColum_3{
+        .ltcFormItem{
+            flex:0 0 100%/3;
+        }
     }
 }
 .ltcFormWrap{
@@ -79,6 +97,9 @@ input[type="checkbox"]{
 }
 /*responsive*/
 @media (min-width: 768px) {
+    .ltcFormItem{
+        .flexDisplay(inline-flex);
+    }
 }
 @media (min-width: 992px) {
 }

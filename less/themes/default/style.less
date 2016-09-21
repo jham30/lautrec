@@ -20,12 +20,19 @@ and open the template in the editor.
 
 }
 /*Diseño de botones basicos*/
+.ltcLink{
+    &:hover,
+    &.selected{
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    //    background-color: #f00;
+    }
+}
 .tp_ltcButton{
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 0.2em;
     padding: (1em/4) 1em;
     &:hover,
-        &.selected{
+    &.selected{
         background-color: rgba(0,0,0,0.2);
         text-decoration: none;
     }
@@ -40,11 +47,12 @@ and open the template in the editor.
         border-top: none;
         border-left: 1px solid rgba(0,0,0,0.3);
         border-right: none;
-        padding: (1em/2) 1em;
+        //padding: (1em/2) 1em;
         text-decoration: none;
         &:hover,
-            &.selected{
-            background-color: rgba(0,0,0,0.2);
+        &.selected{
+            //-color: rgba(0,0,0,0.2);
+            //text-decoration: underline;
         }
         &:first-child{
             border-left: none;
@@ -63,11 +71,14 @@ and open the template in the editor.
     }
     /*Diseño de botones tabs*/
     &.tp_tab{
+        padding-left: 1em;
         .ltcLink{
             border-radius: 0;
             border-bottom: 1px solid rgba(0,0,0,0.3);
             border-left: none;
+            padding: (1em/2) 1em;
             &.selected,
+            &.active,
             &.ui-state-active{
                 border-bottom: none;
                 border-top: 1px solid rgba(0,0,0,0.3);
@@ -109,7 +120,7 @@ and open the template in the editor.
 /* formularios*/
 .ltcFormgrup{
   .ltcFormItem{
-    margin-bottom: 1em;
+//    margin-bottom: 1em;
   }
 }
 /*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
@@ -135,9 +146,12 @@ and open the template in the editor.
         button,
         select,
         .ltcInputComplement{
+            //border-left: 1px solid rgba(0,0,0,0.2);
+            margin-left: 1px;
             &:first-child{
                 border-top-left-radius: @form_radius;
                 border-bottom-left-radius: @form_radius;
+                margin-left: 0;
             }
         }
         input[type="text"],
@@ -149,6 +163,7 @@ and open the template in the editor.
                 border-bottom-right-radius: @form_radius;
             }
         }
+
     }
 }
 /*end Diseño de grupo de botones basicos*/
