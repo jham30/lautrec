@@ -4,8 +4,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /*
+<<<<<<< HEAD
 Created on : 6/07/2016, 09:29:22 AM
 Author     : Usuario
+=======
+    Created on : 6/07/2016, 09:29:22 AM
+    Author     : Usuario
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
 */
 @import url('skin/default.less');
 
@@ -24,7 +29,11 @@ Author     : Usuario
     &:hover,
     &.selected{
         border-bottom: 1px solid rgba(0,0,0,0.2);
+<<<<<<< HEAD
         //    background-color: #f00;
+=======
+    //    background-color: #f00;
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
     }
 }
 .tp_ltcButton{
@@ -112,16 +121,26 @@ Author     : Usuario
     border-radius: 0.2em;
     padding: (1em/4) 1em;
     &:hover,
+<<<<<<< HEAD
     &.selected{
+=======
+        &.selected{
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
         background-color: rgba(0,0,0,0.2);
         text-decoration: none;
     }
 }
 /* formularios*/
 .ltcFormgrup{
+<<<<<<< HEAD
     .ltcFormItem{
         //    margin-bottom: 1em;
     }
+=======
+  .ltcFormItem{
+//    margin-bottom: 1em;
+  }
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
 }
 /*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
 @form_radius:3px;
@@ -132,7 +151,11 @@ Author     : Usuario
     textarea,
     .ltcInputComplement{
         background-color: rgba(0,0,0,0.1);
+<<<<<<< HEAD
         padding: 0 1rem/2;
+=======
+        padding: 1rem/4 1rem/2;
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
         border: none;
     }
     >input[type="text"],
@@ -141,11 +164,20 @@ Author     : Usuario
     >select{
         border-radius: @form_radius;
     }
+<<<<<<< HEAD
     /*redondea los bordes del primer y ultimo elemento dentro de un mix de formulario*/
     .tp_buttonMix,
     .tp_radio,
     .tp_check{
         *{
+=======
+    .tp_buttonMix{
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+            //border-left: 1px solid rgba(0,0,0,0.2);
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
             margin-left: 1px;
             &:first-child{
                 border-top-left-radius: @form_radius;
@@ -153,12 +185,20 @@ Author     : Usuario
                 margin-left: 0;
             }
         }
+<<<<<<< HEAD
         *{
+=======
+        input[type="text"],
+        button,
+        select,
+        .ltcInputComplement{
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
             &:last-child{
                 border-top-right-radius: @form_radius;
                 border-bottom-right-radius: @form_radius;
             }
         }
+<<<<<<< HEAD
         label{
             &:nth-of-type(1){
                 border-top-left-radius: @form_radius;
@@ -166,6 +206,9 @@ Author     : Usuario
                 margin-left: 0;
             }
         }
+=======
+
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
     }
 }
 /*end Diseño de grupo de botones basicos*/

@@ -23,15 +23,21 @@ input[type="checkbox"]{
     /*background-color: rgba(0, 0, 0, 0.07);*/
     // border: 1px solid rgba(0, 0, 0, 0.1);
     }
+<<<<<<< HEAD
     input[type="radio"],
     input[type="checkbox"]{
         display: none;
+=======
+    label,
+    ltcLabel{
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
     }
     &.dpl_block{
         .flexDisplay;
     }
     &.dpl_v{
         .ltcFlexDirec(column);
+<<<<<<< HEAD
         //.ltcFlexAlignItem(stretch);
     }
     .tp_buttonMix,
@@ -45,6 +51,16 @@ input[type="checkbox"]{
 
         .ltcInputComplement{
 
+=======
+        .ltcFlexAlignItem(stretch);
+    }
+    .tp_buttonMix{
+        //border: 1px solid rgba(0,0,0,0.2);
+        flex: 1;
+        .flexProperties(@fDir:row;@fAlignItem:stretch);
+        .ltcInputComplement{
+            
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
             padding: 0 1em;
 
             .flexProperties(@fDir:row;@fAlignItem:center);
@@ -68,6 +84,7 @@ input[type="checkbox"]{
         }
 
     }
+<<<<<<< HEAD
     .tp_radio,
     .tp_check{
         label{
@@ -116,6 +133,8 @@ input[type="checkbox"]{
             }
         }
     }
+=======
+>>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
 }
 .ltcFormgrup{
     .flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
