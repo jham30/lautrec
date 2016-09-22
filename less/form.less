@@ -23,22 +23,28 @@ input[type="checkbox"]{
     /*background-color: rgba(0, 0, 0, 0.07);*/
     // border: 1px solid rgba(0, 0, 0, 0.1);
     }
-    label,
-    ltcLabel{
+    input[type="radio"],
+    input[type="checkbox"]{
+        display: none;
     }
     &.dpl_block{
         .flexDisplay;
     }
     &.dpl_v{
         .ltcFlexDirec(column);
-        .ltcFlexAlignItem(stretch);
+        //.ltcFlexAlignItem(stretch);
+    }
+    .tp_buttonMix,
+    .tp_radio,
+    .tp_check{
+        flex: 1;
+        .flexProperties(@fDir:row;@fAlignItem:stretch);
     }
     .tp_buttonMix{
         //border: 1px solid rgba(0,0,0,0.2);
-        flex: 1;
-        .flexProperties(@fDir:row;@fAlignItem:stretch);
+
         .ltcInputComplement{
-            
+
             padding: 0 1em;
 
             .flexProperties(@fDir:row;@fAlignItem:center);
@@ -61,6 +67,54 @@ input[type="checkbox"]{
             cursor: pointer;
         }
 
+    }
+    .tp_radio,
+    .tp_check{
+        label{
+            .flexProperties(@fDir:row;@fAlignItem:center);
+            background-color: rgba(0,0,0,0.1);
+            padding: 0 1rem/2;
+            height: 1.5rem;
+            cursor: pointer;
+            &:nth-of-type(1){
+                margin-left: 0;
+            }
+            &::before{
+                content: "";
+                display: inline-block;
+                height: 1em;
+                width: 1em;
+                border: 2px solid rgba(0,0,0,.4);
+                margin-right: 5px;
+                border-radius: 50%;
+                .animation;
+            }
+        }
+    }
+    .tp_radio{
+        label{
+            &::before{
+                border-radius: 50%;
+            }
+        }
+        input[type="radio"]:checked+label{
+            &::before{
+                background-color: @c_lemon_green;
+            }
+
+        }
+    }
+    .tp_check{
+        label{
+            &::before{
+                border-radius: 3px;
+            }
+        }
+        input[type="checkbox"]:checked+label{
+            &::before{
+                background-color: @c_orange;
+            }
+        }
     }
 }
 .ltcFormgrup{

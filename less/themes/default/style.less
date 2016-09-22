@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /*
-    Created on : 6/07/2016, 09:29:22 AM
-    Author     : Usuario
+Created on : 6/07/2016, 09:29:22 AM
+Author     : Usuario
 */
 @import url('skin/default.less');
 
@@ -24,7 +24,7 @@ and open the template in the editor.
     &:hover,
     &.selected{
         border-bottom: 1px solid rgba(0,0,0,0.2);
-    //    background-color: #f00;
+        //    background-color: #f00;
     }
 }
 .tp_ltcButton{
@@ -112,16 +112,16 @@ and open the template in the editor.
     border-radius: 0.2em;
     padding: (1em/4) 1em;
     &:hover,
-        &.selected{
+    &.selected{
         background-color: rgba(0,0,0,0.2);
         text-decoration: none;
     }
 }
 /* formularios*/
 .ltcFormgrup{
-  .ltcFormItem{
-//    margin-bottom: 1em;
-  }
+    .ltcFormItem{
+        //    margin-bottom: 1em;
+    }
 }
 /*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
 @form_radius:3px;
@@ -132,7 +132,7 @@ and open the template in the editor.
     textarea,
     .ltcInputComplement{
         background-color: rgba(0,0,0,0.1);
-        padding: 1rem/4 1rem/2;
+        padding: 0 1rem/2;
         border: none;
     }
     >input[type="text"],
@@ -141,12 +141,11 @@ and open the template in the editor.
     >select{
         border-radius: @form_radius;
     }
-    .tp_buttonMix{
-        input[type="text"],
-        button,
-        select,
-        .ltcInputComplement{
-            //border-left: 1px solid rgba(0,0,0,0.2);
+    /*redondea los bordes del primer y ultimo elemento dentro de un mix de formulario*/
+    .tp_buttonMix,
+    .tp_radio,
+    .tp_check{
+        *{
             margin-left: 1px;
             &:first-child{
                 border-top-left-radius: @form_radius;
@@ -154,16 +153,19 @@ and open the template in the editor.
                 margin-left: 0;
             }
         }
-        input[type="text"],
-        button,
-        select,
-        .ltcInputComplement{
+        *{
             &:last-child{
                 border-top-right-radius: @form_radius;
                 border-bottom-right-radius: @form_radius;
             }
         }
-
+        label{
+            &:nth-of-type(1){
+                border-top-left-radius: @form_radius;
+                border-bottom-left-radius: @form_radius;
+                margin-left: 0;
+            }
+        }
     }
 }
 /*end Diseño de grupo de botones basicos*/
