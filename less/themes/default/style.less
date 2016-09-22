@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /*
-    Created on : 6/07/2016, 09:29:22 AM
-    Author     : Usuario
+Created on : 6/07/2016, 09:29:22 AM
+Author     : Usuario
 */
 @import url('skin/default.less');
 
@@ -20,12 +20,19 @@ and open the template in the editor.
 
 }
 /*Diseño de botones basicos*/
+.ltcLink{
+    &:hover,
+    &.selected{
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        //    background-color: #f00;
+    }
+}
 .tp_ltcButton{
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 0.2em;
     padding: (1em/4) 1em;
     &:hover,
-        &.selected{
+    &.selected{
         background-color: rgba(0,0,0,0.2);
         text-decoration: none;
     }
@@ -40,11 +47,12 @@ and open the template in the editor.
         border-top: none;
         border-left: 1px solid rgba(0,0,0,0.3);
         border-right: none;
-        padding: (1em/2) 1em;
+        //padding: (1em/2) 1em;
         text-decoration: none;
         &:hover,
-            &.selected{
-            background-color: rgba(0,0,0,0.2);
+        &.selected{
+            //-color: rgba(0,0,0,0.2);
+            //text-decoration: underline;
         }
         &:first-child{
             border-left: none;
@@ -63,11 +71,14 @@ and open the template in the editor.
     }
     /*Diseño de botones tabs*/
     &.tp_tab{
+        padding-left: 1em;
         .ltcLink{
             border-radius: 0;
             border-bottom: 1px solid rgba(0,0,0,0.3);
             border-left: none;
+            padding: (1em/2) 1em;
             &.selected,
+            &.active,
             &.ui-state-active{
                 border-bottom: none;
                 border-top: 1px solid rgba(0,0,0,0.3);
@@ -101,16 +112,16 @@ and open the template in the editor.
     border-radius: 0.2em;
     padding: (1em/4) 1em;
     &:hover,
-        &.selected{
+    &.selected{
         background-color: rgba(0,0,0,0.2);
         text-decoration: none;
     }
 }
 /* formularios*/
 .ltcFormgrup{
-  .ltcFormItem{
-    margin-bottom: 1em;
-  }
+    .ltcFormItem{
+        //    margin-bottom: 1em;
+    }
 }
 /*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
 @form_radius:3px;
@@ -121,7 +132,7 @@ and open the template in the editor.
     textarea,
     .ltcInputComplement{
         background-color: rgba(0,0,0,0.1);
-        padding: 1rem/4 1rem/2;
+        padding: 0 1rem/2;
         border: none;
     }
     >input[type="text"],
@@ -130,23 +141,29 @@ and open the template in the editor.
     >select{
         border-radius: @form_radius;
     }
-    .tp_buttonMix{
-        input[type="text"],
-        button,
-        select,
-        .ltcInputComplement{
+    /*redondea los bordes del primer y ultimo elemento dentro de un mix de formulario*/
+    .tp_buttonMix,
+    .tp_radio,
+    .tp_check{
+        *{
+            margin-left: 1px;
             &:first-child{
                 border-top-left-radius: @form_radius;
                 border-bottom-left-radius: @form_radius;
+                margin-left: 0;
             }
         }
-        input[type="text"],
-        button,
-        select,
-        .ltcInputComplement{
+        *{
             &:last-child{
                 border-top-right-radius: @form_radius;
                 border-bottom-right-radius: @form_radius;
+            }
+        }
+        label{
+            &:nth-of-type(1){
+                border-top-left-radius: @form_radius;
+                border-bottom-left-radius: @form_radius;
+                margin-left: 0;
             }
         }
     }

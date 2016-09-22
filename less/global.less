@@ -21,7 +21,7 @@ body{
     color: @general-font-color;
 }
 a{
-    color: #000;
+    color: @general-font-color;
 }
 *{
     box-sizing: border-box;
@@ -45,6 +45,12 @@ button{
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
 }
+input,
+button,
+select{
+    height: 1.5rem;
+}
+
 // @media (min-width
 // @media (min-width:
 // @media (min-width:
@@ -141,6 +147,15 @@ button{
     -ms-flex-align: @fAlignItem;*/
     align-items: @fAlignItem;
 }
+/*shadows*/
+*[data-ltcshw="on"]{
+    -webkit-box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+}
+*[data-ltcshw$="hover"]:hover{
+    -webkit-box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+box-shadow: 5px 5px 2px 2px rgba(0,0,0,0.4);
+}
 /*animations*/
 .animation(@x:20ms)
 {
@@ -150,3 +165,10 @@ button{
     transition: all 300ms ease-out @arguments;
 }
 /*end animation*/
+.all_fix{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
