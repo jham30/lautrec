@@ -68,7 +68,9 @@ Author     : jaime
     .ltcLyCP{
         height: 100%;
         width: 100%;
-
+        &.scrollOn{
+            overflow: auto;
+        }
     }
     &.centeredBouth{
         .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
@@ -86,7 +88,9 @@ Author     : jaime
     -ms-flex: 1;
     flex: 1;
 }
-
+.scroll{
+    overflow: auto;
+}
 /*responsive*/
 @media (min-width: 768px) {
     .ltcLayoutWrap{
@@ -122,9 +126,6 @@ Author     : jaime
         .shk_control_area{
             display: none;
         }
-    }
-    .scrollOn{
-        overflow: auto;
     }
 }
 

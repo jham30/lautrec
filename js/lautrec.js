@@ -59,19 +59,6 @@ $(document).ready(function(){
     // Observe a specific DOM element:
     observeDOM( $('body')[0] ,function(){
         //     console.log('dom changed');
-        //$('.ltcTabs,.shk_tabs').tabs();
-        function openCity(evt, tabName) {
-            var i, x, ltcLink;
-            x = document.getElementsByClassName("tab-cont");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("ltcLink");
-            for (i = 0; i < x.length; i++) {
-                ltcLink[i].className = ltcLink[i].className.replace(" Selected", "");
-            }
-            document.getElementById(tabName).style.display = "flex";
-            evt.currentTarget.className += " selected";
-        }
+        $('.ltcTabs,.shk_tabs').tabs();
     });
 });

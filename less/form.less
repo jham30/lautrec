@@ -14,7 +14,7 @@ input[type="checkbox"]{
     }
 }
 .ltcFormItem{
-    .flexProperties(@fDis:flex;@fDir:row);
+    .flexProperties(@fDis:inline-flex;@fDir:row);
     input,
     select,
     textarea{
@@ -23,44 +23,22 @@ input[type="checkbox"]{
     /*background-color: rgba(0, 0, 0, 0.07);*/
     // border: 1px solid rgba(0, 0, 0, 0.1);
     }
-<<<<<<< HEAD
-    input[type="radio"],
-    input[type="checkbox"]{
-        display: none;
-=======
     label,
     ltcLabel{
->>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
     }
     &.dpl_block{
         .flexDisplay;
     }
     &.dpl_v{
         .ltcFlexDirec(column);
-<<<<<<< HEAD
-        //.ltcFlexAlignItem(stretch);
-    }
-    .tp_buttonMix,
-    .tp_radio,
-    .tp_check{
-        flex: 1;
-        .flexProperties(@fDir:row;@fAlignItem:stretch);
-    }
-    .tp_buttonMix{
-        //border: 1px solid rgba(0,0,0,0.2);
-
-        .ltcInputComplement{
-
-=======
         .ltcFlexAlignItem(stretch);
     }
     .tp_buttonMix{
         //border: 1px solid rgba(0,0,0,0.2);
-        flex: 1;
+
         .flexProperties(@fDir:row;@fAlignItem:stretch);
         .ltcInputComplement{
-            
->>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
+            border-left: 1px solid rgba(0,0,0,0.2);
             padding: 0 1em;
 
             .flexProperties(@fDir:row;@fAlignItem:center);
@@ -84,85 +62,16 @@ input[type="checkbox"]{
         }
 
     }
-<<<<<<< HEAD
-    .tp_radio,
-    .tp_check{
-        label{
-            .flexProperties(@fDir:row;@fAlignItem:center);
-            background-color: rgba(0,0,0,0.1);
-            padding: 0 1rem/2;
-            height: 1.5rem;
-            cursor: pointer;
-            &:nth-of-type(1){
-                margin-left: 0;
-            }
-            &::before{
-                content: "";
-                display: inline-block;
-                height: 1em;
-                width: 1em;
-                border: 2px solid rgba(0,0,0,.4);
-                margin-right: 5px;
-                border-radius: 50%;
-                .animation;
-            }
-        }
-    }
-    .tp_radio{
-        label{
-            &::before{
-                border-radius: 50%;
-            }
-        }
-        input[type="radio"]:checked+label{
-            &::before{
-                background-color: @c_lemon_green;
-            }
-
-        }
-    }
-    .tp_check{
-        label{
-            &::before{
-                border-radius: 3px;
-            }
-        }
-        input[type="checkbox"]:checked+label{
-            &::before{
-                background-color: @c_orange;
-            }
-        }
-    }
-=======
->>>>>>> 584f12f8a6325e1b6a108da073e40706f56a2400
 }
 .ltcFormgrup{
-    .flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
-    padding:0 0 @CWall_p @CWall_p;
-    .ltcFormItem{
-        padding:@CWall_p @CWall_p 0 0;
-        flex:0 0 100%;
-    }
+    .flexProperties(@fDir:row;@fAlignCont:flex-end;@fAlignItem:flex-end);
     &.dpl_v{
-        .ltcFormItem{
-            .ltcFlexDirec(column);
-            .ltcFlexAlignItem(stretch);
-        }
-    }
-    // &.FGColum_1{
-    //     .ltcFormItem{
-    //         flex:0 0 100%;
-    //     }
-    // }
-    &.FGColum_2{
-        .ltcFormItem{
-            flex:0 0 100%/2;
-        }
-    }
-    &.FGColum_3{
-        .ltcFormItem{
-            flex:0 0 100%/3;
-        }
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
     }
 }
 .ltcFormWrap{
@@ -170,9 +79,6 @@ input[type="checkbox"]{
 }
 /*responsive*/
 @media (min-width: 768px) {
-    .ltcFormItem{
-        .flexDisplay(inline-flex);
-    }
 }
 @media (min-width: 992px) {
 }
