@@ -1,5 +1,14 @@
+.ltcGroups,
+.tlcCWall,
+.ltcFormgrup,
+.ltcButtonsGroup{
+    .flexProperties(@fDir:row;@fWrap:wrap);
+    >*{
+        //border: 2px solid #f00;
+    }
+}
 .ltcGroups{
-    .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:center);
+    .ltcFlexAlignItem;
     .tlcLogo{
         height:100%;
         width: 10em;
@@ -7,13 +16,11 @@
             width: 100%;
         }
     }
-    // .ltcGroups{
-    //     flex: 1;
-    // }
     &.dpl_v{
         .ltcFlexDirec(column);
     }
 }
+
 /*responsive*/
 @media (min-width: 768px) {
     .ltcGroups{

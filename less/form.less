@@ -118,7 +118,6 @@ input[type="checkbox"]{
     }
 }
 .ltcFormgrup{
-    .flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
     padding:0 0 @CWall_p @CWall_p;
     .ltcFormItem{
         padding:@CWall_p @CWall_p 0 0;
@@ -130,21 +129,6 @@ input[type="checkbox"]{
             .ltcFlexAlignItem(stretch);
         }
     }
-    // &.FGColum_1{
-    //     .ltcFormItem{
-    //         flex:0 0 100%;
-    //     }
-    // }
-    &.FGColum_2{
-        .ltcFormItem{
-            flex:0 0 100%/2;
-        }
-    }
-    &.FGColum_3{
-        .ltcFormItem{
-            flex:0 0 100%/3;
-        }
-    }
 }
 .ltcFormWrap{
 
@@ -153,6 +137,27 @@ input[type="checkbox"]{
 @media (min-width: 768px) {
     .ltcFormItem{
         .flexDisplay(inline-flex);
+    }
+    .ltcFormgrup{
+        //.flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
+        .ltcFlexAlignItem(flex-end);
+
+        &.FGColum_2{
+            .ltcFormItem{
+                flex:0 0 100%/2;
+            }
+        }
+        &.FGColum_3{
+            .ltcFormItem{
+                flex:0 0 100%/3;
+            }
+        }
+        .ltcFormItem{
+            /*entere widht obliga al portador a usar el anchototal de padre */
+            &.FormEW{
+                flex:0 0 100%;
+            }
+        }
     }
 }
 @media (min-width: 992px) {

@@ -1,65 +1,96 @@
 .tlcCWall{
-    .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:stretch);
-    padding:0 0 @CWall_p @CWall_p;
+    .ltcFlexAlignItem(stretch);
+    padding:@CWall_p;
     .CWCard{
-        // .flexProperties(@fDir:column;@fAlignItem:stretch);
-        padding:@CWall_p @CWall_p 0 0;
-    }
-    &.CWColum_1{
-        .CWCard{
-            flex:0 0 100%;
-        }
-    }
-    &.CWColum_2{
-        .CWCard{
-            flex:0 0 100%/2;
-        }
-    }
-    &.CWColum_3{
-        .CWCard{
-            flex:0 0 100%/3;
-        }
-    }
-    &.CWColum_4{
-        .CWCard{
-            flex:0 0 100%/4;
-        }
-    }
-    &.CWColum_5{
-        .CWCard{
-            flex:0 0 100%/5;
-        }
-    }
-    &.CWColum_6{
-        .CWCard{
-            flex:0 0 100%/6;
-        }
-    }
-    &.CWColum_7{
-        .CWCard{
-            flex:0 0 100%/7;
-        }
-    }
-    &.CWColum_8{
-        .CWCard{
-            flex:0 0 100%/8;
-        }
-    }
-    &.CWColum_9{
-        .CWCard{
-            flex:0 0 100%/9;
-        }
-    }
-    &.CWColum_10{
-        .CWCard{
-            flex:0 0 100%/10;
-        }
+        padding:0 0 @CWall_p 0;
     }
 }
 /*responsive*/
 @media (min-width: 768px) {
 }
 @media (min-width: 992px) {
+    .tlcCWall{
+        .CWCard{
+            padding:0 @CWall_p @CWall_p 0;
+        }
+        &.CWColum_1{
+            .CWCard{
+                flex:0 0 100%;
+            }
+        }
+        &.CWColum_2{
+            .CWCard{
+                flex:0 0 100%/2;
+                &:nth-child(2n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_3{
+            .CWCard{
+                flex:0 0 100%/3;
+                &:nth-child(3n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_4{
+            .CWCard{
+                flex:0 0 100%/4;
+                &:nth-child(4n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_5{
+            .CWCard{
+                flex:0 0 100%/5;
+                &:nth-child(5n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_6{
+            .CWCard{
+                flex:0 0 100%/6;
+                &:nth-child(6n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_7{
+            .CWCard{
+                flex:0 0 100%/7;
+                &:nth-child(7n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_8{
+            .CWCard{
+                flex:0 0 100%/8;
+                &:nth-child(8n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_9{
+            .CWCard{
+                flex:0 0 100%/9;
+                &:nth-child(9n){
+                    padding-right: 0;
+                }
+            }
+        }
+        &.CWColum_10{
+            .CWCard{
+                flex:0 0 100%/10;
+                &:nth-child(10n){
+                    padding-right: 0;
+                }
+            }
+        }
+    }
 }
 @media (min-width: 1200px) {
 }
