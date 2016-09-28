@@ -1,21 +1,27 @@
 {
-  "name": "lautrec",
-  "authors": [
-    "Jaime Meza"
-  ],
-  "description": "",
-  "main": "./dist/lautrec.css",
-  "license": "",
-  "homepage": "",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "animate.css": "^3.5.2"
-  }
+    "name": "lautrec",
+    "description": "A framework that helps creating user interface design in easy and efficient way. Made with less css with performance in mind.",
+    "authors": [
+        "Jaime Meza"
+    ],
+    "main": [
+        "./dist/lautrec.css",
+        "./less/lautrec.less"
+    ],
+    "license": "",
+    "homepage": "",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/jham30/lautrec.git"
+    },
+    "dependencies": {
+    }
 }
