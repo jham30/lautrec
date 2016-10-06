@@ -4,8 +4,8 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /*
-    Created on : Jun 29, 2016, 3:09:59 PM
-    Author     : jaime
+Created on : Jun 29, 2016, 3:09:59 PM
+Author     : jaime
 */
 input[type="checkbox"]{
     position: relative;
@@ -19,9 +19,9 @@ input[type="checkbox"]{
     select,
     textarea{
         flex: 1;
-    //tiene que ser Movido a un tema
-    /*background-color: rgba(0, 0, 0, 0.07);*/
-    // border: 1px solid rgba(0, 0, 0, 0.1);
+        //tiene que ser Movido a un tema
+        /*background-color: rgba(0, 0, 0, 0.07);*/
+        // border: 1px solid rgba(0, 0, 0, 0.1);
     }
     input[type="radio"],
     input[type="checkbox"]{
@@ -36,6 +36,7 @@ input[type="checkbox"]{
     }
     .tp_buttonMix,
     .tp_radio,
+    .tp_radio_grid,
     .tp_check{
         flex: 1;
         .flexProperties(@fDir:row;@fAlignItem:stretch);
@@ -62,13 +63,14 @@ input[type="checkbox"]{
             }
         }
         button{
-        //    background-color: #ccc;
+            //    background-color: #ccc;
             border: none;
             cursor: pointer;
         }
 
     }
     .tp_radio,
+    .tp_radio_grid,
     .tp_check{
         label{
             .flexProperties(@fDir:row;@fAlignItem:center);
@@ -91,7 +93,8 @@ input[type="checkbox"]{
             }
         }
     }
-    .tp_radio{
+    .tp_radio,
+    .tp_radio_grid{
         label{
             &::before{
                 border-radius: 50%;
@@ -101,7 +104,6 @@ input[type="checkbox"]{
             &::before{
                 background-color: @c_lemon_green;
             }
-
         }
     }
     .tp_check{
@@ -116,15 +118,38 @@ input[type="checkbox"]{
             }
         }
     }
+    .tp_radio_grid{
+        &.FIColum_2{
+            .ltcFlexwrap;
+            label{
+                flex:0 0 100%/2;
+            }
+        }
+        &.FIColum_3{
+            .ltcFlexwrap;
+            label{
+                flex:0 0 100%/3;
+            }
+        }
+    }
 }
-.ltcFormgrup{
+.ltcFormGroup{
     padding:0 0 @CWall_p @CWall_p;
-    .ltcFormItem{
+    /*posibilidta aceptar elementos diferentes a ltcFormItem sin desajustar el diseño*/
+    >*:not(.ltcFormItem){
+        .flexProperties(@fDis:flex);
+        .ltcFormItem{
+            padding:0;
+        }
+    }
+    .ltcFormItem,
+    >*{
         padding:@CWall_p @CWall_p 0 0;
         flex:0 0 100%;
     }
     &.dpl_v{
-        .ltcFormItem{
+        .ltcFormItem,
+        >*{
             .ltcFlexDirec(column);
             .ltcFlexAlignItem(stretch);
         }
@@ -138,17 +163,17 @@ input[type="checkbox"]{
     .ltcFormItem{
         .flexDisplay(inline-flex);
     }
-    .ltcFormgrup{
+    .ltcFormGroup{
         //.flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
         .ltcFlexAlignItem(flex-end);
 
         &.FGColum_2{
-            .ltcFormItem{
+            >*{
                 flex:0 0 100%/2;
             }
         }
         &.FGColum_3{
-            .ltcFormItem{
+            >*{
                 flex:0 0 100%/3;
             }
         }
