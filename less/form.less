@@ -134,7 +134,7 @@ input[type="checkbox"]{
     }
 }
 .ltcFormGroup{
-    padding:0 0 @CWall_p @CWall_p;
+    //padding:0 0 @CWall_p @CWall_p;
     /*posibilidta aceptar elementos diferentes a ltcFormItem sin desajustar el diseño*/
     >*:not(.ltcFormItem){
         .flexProperties(@fDis:flex);
@@ -144,8 +144,8 @@ input[type="checkbox"]{
     }
     .ltcFormItem,
     >*{
-        padding:@CWall_p @CWall_p 0 0;
-        flex:0 0 100%;
+        // padding:@CWall_p @CWall_p 0 0;
+        // flex:0 0 100%;
     }
     &.dpl_v{
         .ltcFormItem,
@@ -164,25 +164,7 @@ input[type="checkbox"]{
         .flexDisplay(inline-flex);
     }
     .ltcFormGroup{
-        //.flexProperties(@fDir:row;@fWrap:wrap;@fAlignCont:flex-end;@fAlignItem:flex-end);
         .ltcFlexAlignItem(flex-end);
-
-        &.FGColum_2{
-            >*{
-                flex:0 0 100%/2;
-            }
-        }
-        &.FGColum_3{
-            >*{
-                flex:0 0 100%/3;
-            }
-        }
-        .ltcFormItem{
-            /*entere widht obliga al portador a usar el anchototal de padre */
-            &.FormEW{
-                flex:0 0 100%;
-            }
-        }
     }
 }
 @media (min-width: 992px) {

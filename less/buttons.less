@@ -46,8 +46,9 @@ and open the template in the editor.
 }
 .tp_dropdown{
     position:relative;
-
-    ul{
+    //dd significa drop down
+    ul,
+    .dd_content{
         position: absolute;
         top: 100%;
         left: 0;
@@ -57,7 +58,7 @@ and open the template in the editor.
         box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
         .animated;
         display: none;
-        z-index: 1;
+        z-index: 3;
     }
     caret,
     .caret{
@@ -68,12 +69,16 @@ and open the template in the editor.
         border-right: 5px solid transparent;
     }
     &.open{
-        ul{
+        ul,
+        .dd_content{
             .flexDisplay
         }
     }
+    /*por defecto el contenido es deplagado hacia abajo*/
+    /*despliega el ontenido a la izquierda*/
     &.dpl_l{
-        ul{
+        ul,
+        .dd_content{
             top: 0;
             left: 100%;
             margin-top: 0;
@@ -86,12 +91,14 @@ and open the template in the editor.
             border-bottom: 5px solid transparent;
         }
         &.aniOut{
-            ul{
+            ul,
+            .dd_content{
                 .bounceOutUp;
             }
         }
         &.aniIn{
-            ul{
+            ul,
+            .dd_content{
                 .bounceInLeft;
             }
         }
@@ -105,14 +112,17 @@ and open the template in the editor.
 }
 .ltcGroupWrap,
 .ltcButtonsGroup{
-    /*permite alinearlos elementos por defecto estar ala izquierda*/
+    /*permite alinear los elementos, por defecto se alinian a la izquierda*/
+    //centro
     &.alg_c{
         .ltcFlexJustCont(@fJustCont:center);
     }
-    &.alg_d{
+    //derecha
+    &.alg_r{
         .ltcFlexJustCont(@fJustCont:flex-start);
     }
-    &.alg_i{
+    //izquierda
+    &.alg_l{
 
     }
     .ltcButtonsGroup,
@@ -139,7 +149,7 @@ and open the template in the editor.
 .ltcButtonsGroup{
     .flexDisplay(inline-flex);
     &.dpl_block_v{
-        width: 100%;
+        min-width: 100%;
         .ltcFlexDirec(@fDir:column);
         .ltcFlexAlignItem(@fAlignItem:stretch);
     }
@@ -208,6 +218,121 @@ and open the template in the editor.
             margin: @CWall_p @CWall_p 0 0;
             border: 1px solid rgba(0,0,0,0.3);
             .ltcFlexDirec(column);
+        }
+    }
+    &.tp_wizard_1{
+        .ltcLink{
+            //background-color: rgba(0,0,0,0.1);
+            border-top-width: 10px;
+            border-top-style: solid;
+            border-top-color:#ddd;
+            padding:0.5em 1em;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top: -10px;
+                right: -5px;
+                border-top: 5px solid transparent;
+                border-left: 5px solid #ddd;
+                border-right:0 solid transparent ;
+                border-bottom:5px solid transparent;
+                z-index: 1;
+            }
+            &:last-child{
+                &:before{
+                    display: none;
+                }
+            }
+            .WNum{
+                .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
+                height: 1.5em;
+                width: 1.5em;
+                background-color: rgba(0,0,0,0.2);
+                border-radius: 50%;
+                color: #fff;
+                font-size: 1.6em;
+                line-height: 1em;
+                margin-right: 0.5em;
+            }
+            .WTitle{
+                display: block;
+                font-weight: bold;
+            }
+            .WDescript{
+                font-style: italic;
+                font-size: 0.9em;
+            }
+            &.completed{
+                color: rgba(0, 0, 0, 0.1);
+                .WNum{
+                }
+            }
+            &.current{
+                border-top-color:@c_blue;
+                &:before{
+                    border-left: 5px solid @c_blue;
+                }
+                .WNum{
+                    background-color:@c_blue;
+                }
+
+            //    color: #fff;
+            }
+        }
+    }
+    &.tp_wizard_2{
+        @wz_color:#bbb;
+        @wz_current_color:@c_blue;
+        .ltcLink{
+            .ltcFlexDirec(column);
+            padding:1em;
+            text-align: center;
+            position: relative;
+            &:before{
+                content: "";
+                position: absolute;
+                top: 2.2em;
+                left: 0;
+                width: 100%;
+                border-top-width: 2px;
+                border-top-style: solid;
+                border-top-color:@wz_color;
+            }
+            .WNum{
+                .flexProperties(@fJustCont:center;@fAlignCont:center;@fAlignItem:center);
+                height: 1.5em;
+                width: 1.5em;
+                background-color: @wz_color;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 2em;
+                line-height: 1em;
+                margin-right: 0.5em;
+                position: relative;
+                z-index: 1;
+            }
+            .WTitle{
+                display: block;
+                font-weight: bold;
+            }
+            .WDescript{
+                font-style: italic;
+                font-size: 0.9em;
+            }
+            &.completed{
+                color: rgba(0, 0, 0, 0.1);
+                .WNum{
+                }
+            }
+            &.current{
+                &:before{
+                    border-top-color:@wz_current_color;
+                }
+                .WNum{
+                    background-color:@wz_current_color;
+                }
+            }
         }
     }
 }

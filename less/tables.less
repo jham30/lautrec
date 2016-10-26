@@ -4,20 +4,28 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /*
-    Created on : 18/07/2016, 07:08:55 AM
-    Author     : Usuario
+Created on : 18/07/2016, 07:08:55 AM
+Author     : Usuario
 */
+@ftmargin:1px;
+//external border
+@fteborder:1px;
+@ftcell:#fff;
+@fttitle:#BBB;
+@ftlinecolor:#ccc;
+/*define el border radius*/
+@ftbr:0px;
+@celldiffcolour:#efefef;
 
-.tlc_fakeTable{
-    background-color: #ccc;
-    padding: 1px 1px 0 0;
+*[class^="tlc_fakeTable"]{
+    background-color: @ftlinecolor;
+    padding: @fteborder;
     .flexProperties(@fDir:row;@fAlignItem:stretch);
     .rw{
         .flexProperties(@fDir:row;@fAlignItem:stretch);
-
         .rw_tl{
-            background-color: #eee;
-            margin:0 0 1px 1px;
+            background-color: @fttitle;
+            margin:0 @ftmargin @ftmargin 0;
             width: 2em;
             white-space: nowrap;
             .flexProperties(@fJustCont:center;@fAlignItem:center);
@@ -35,9 +43,24 @@ and open the template in the editor.
         }
         .cell{
             flex: 1;
-            background-color: #fff;
-            margin:0 0 1px 1px;
+            //border-radius: @ftbr;
+            .flexProperties(@fDir:row;@fWrap:wrap;@fAlignItem:center);
+            background-color: @ftcell;
+            margin-bottom: @ftmargin;
             padding: 0.3em;
+            &::before{
+                content:attr(title);
+                background-color: #bbb;
+                padding: 0 1em;
+                width: 15%;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 0.8em;
+                border-radius: 2px;
+                margin-right: 1em;
+                text-overflow: ellipsis;
+            }
         }
     }
     .tbl_header{
@@ -46,40 +69,41 @@ and open the template in the editor.
     .tbl_body{
         .flexProperties(@fAlignItem:stretch);
         flex: 1;
+    }
+    &[class$="_row"]{
         .rw{
-            &:first-child{
+            &:nth-child(2n+2){
                 .cell{
-                }
-            }
-            .cell{
-                &:last-child{
+                    background-color: @celldiffcolour;
                 }
             }
         }
     }
-    .dpl_v{
-
-    }
-    &.dpl_h{
+    &[class$="_col"]{
         .tbl_body{
-            .ltcFlexDirec(column);
-            .rw_bd{
-                .ltcFlexDirec(row);
+            .rw{
+                .cell{
+                    &:nth-child(2n+2){
+                        background-color: @celldiffcolour;
+                    }
+                }
             }
         }
     }
 }
 /*responsive*/
 @media (min-width: 768px) {
-    .tlc_fakeTable{
+    *[class^="tlc_fakeTable"]{
         .ltcFlexDirec(column);
-        .tbl_body{
-            .ltcFlexDirec(row);
-        }
         .rw{
             flex: 1;
             .rw_tl{
                 display: none;
+            }
+            .cell{
+                &::before{
+                    display: none;
+                }
             }
         }
         .tbl_header{
@@ -87,7 +111,64 @@ and open the template in the editor.
             &.rw{
                 .flexProperties(@fDir:row;@fAlignItem:stretch);
                 .cell{
-                    background-color: #eee;
+                    background-color: @fttitle;
+                }
+            }
+        }
+        &[class$="_row"]{
+            >.rw{
+                &:first-child{
+                    .cell{
+                        margin-top:0;
+                    }
+                }
+            }
+            .rw{
+                .cell{
+                    margin:@ftmargin 0 0 @ftmargin;
+                    &:first-child{
+                        margin-left:0;
+                    }
+                }
+            }
+            .tbl_body{
+                .ltcFlexDirec(column);
+                .rw_bd{
+                    .ltcFlexDirec(row);
+                }
+            }
+        }
+        &[class$="_col"]{
+            >.rw{
+                &:first-child{
+                    .cell{
+                        margin-top:0;
+                        &:first-child{
+                            margin-left:0;
+                        }
+                    }
+                }
+            }
+            .rw{
+                .cell{
+                    margin:@ftmargin 0 0 @ftmargin;
+
+                }
+
+            }
+            .tbl_body{
+                .ltcFlexDirec(row);
+                .rw{
+                    .cell{
+                        &:nth-child(2n+2){
+                            background-color: @celldiffcolour;
+                        }
+                    }
+                    &:first-child{
+                        .cell{
+                            margin-left:0;
+                        }
+                    }
                 }
             }
         }
@@ -95,7 +176,15 @@ and open the template in the editor.
 }
 
 @media (min-width: 992px) {
-
+    *[class^="tlc_fakeTable"]{
+        .rw{
+            .cell{
+                // &::before{
+                //     display: none;
+                // }
+            }
+        }
+    }
 }
 
 @media (min-width: 1200px) {
@@ -111,7 +200,7 @@ and open the template in the editor.
 
             }
             .rw_bd{
-                flex: 1;
+                //    flex: 1;
             }
         }
     }
