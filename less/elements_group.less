@@ -1,7 +1,7 @@
-.ltcGroups,
-.ltcCWall,
-.ltcFormGroup,
-.ltcButtonsGroup{
+.@{CPrefix}Groups,
+.@{CPrefix}CWall,
+.@{CPrefix}FormGroup,
+.@{CPrefix}ButtonsGroup{
     .flexProperties(@fDir:row;@fWrap:wrap);
     .fixBoth{
         -webkit-flex: 1;
@@ -10,16 +10,16 @@
     }
 }
 /*clases especificas para grupos que tiene la posibilidad de dividirse en columnas*/
-.ltcCWall,
-.ltcFormGroup{
+.@{CPrefix}CWall,
+.@{CPrefix}FormGroup{
     >*{
         //padding:0 0 @CWall_p 0;
         flex:0 0 100%;
     }
 }
-.ltcGroups{
-    .ltcFlexAlignItem;
-    .tlcLogo{
+.@{CPrefix}Groups{
+    .FlexAlignItem;
+    .@{CPrefix}Logo{
         height:100%;
         width: 10em;
         img,svg{
@@ -27,7 +27,7 @@
         }
     }
     &.dpl_v{
-        .ltcFlexDirec(column);
+        .FlexDirec(column);
     }
 }
 @CW_separation:2%;
@@ -36,89 +36,26 @@
 
 }
 @media (min-width: 992px) {
-    .ltcCWall,
-    .ltcFormGroup,
+    .@{CPrefix}CWall,
+    .@{CPrefix}FormGroup,
     .tp_iconBlock{
         >*{
             margin:0 @CW_separation @CW_separation 0;
             flex:0 0 100%;
         }
-        // &.CNumber_1{
-        //     >*{
-        //         flex:0 0 100%;
-        //     }
-        // }
-        &.CNumber_2{
-            >*{
-                flex:0 0 (100/2)-((@CW_separation/2)*1);
-                &:nth-child(2n){
-                    margin-right: 0;
+        /*crea las clases para dividir en N numer de columnas*/
+        .generate-columns(10);
+
+        .generate-columns(@n, @i: 1) when (@i =< @n) {
+            &.CNumber_@{i} {
+                >*{
+                    flex:0 0 (100/@i)-((@CW_separation/@i)*(@i - 1));
+                    &:nth-child(@{i}n){
+                        margin-right: 0;
+                    }
                 }
             }
-        }
-        &.CNumber_3{
-            >*{
-                flex:0 0 (100/3)-((@CW_separation/3)*2);
-                &:nth-child(3n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_4{
-            >*{
-                flex:0 0 (100/4)-((@CW_separation/4)*3);
-                &:nth-child(4n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_5{
-            >*{
-                flex:0 0 (100/5)-((@CW_separation/5)*4);
-                &:nth-child(5n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_6{
-            >*{
-                flex:0 0 (100/6)-((@CW_separation/6)*5);
-                &:nth-child(6n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_7{
-            >*{
-                flex:0 0 (100/7)-((@CW_separation/7)*6);
-                &:nth-child(7n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_8{
-            >*{
-                flex:0 0 (100/8)-((@CW_separation/8)*7);
-                &:nth-child(8n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_9{
-            >*{
-                flex:0 0 (100/9)-((@CW_separation/9)*8);
-                &:nth-child(9n){
-                    margin-right: 0;
-                }
-            }
-        }
-        &.CNumber_10{
-            >*{
-                flex:0 0 (100/10)-((@CW_separation/10)*9);
-                &:nth-child(10n){
-                    margin-right: 0;
-                }
-            }
+            .generate-columns(@n, (@i + 1));
         }
     }
 }

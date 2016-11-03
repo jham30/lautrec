@@ -95,7 +95,7 @@ Author     : Usuario
 /*responsive*/
 @media (min-width: 768px) {
     *[class^="ltc_fakeTable"]{
-        .ltcFlexDirec(column);
+        .FlexDirec(column);
         .rw{
             flex: 1;
             .rw_tl{
@@ -133,9 +133,9 @@ Author     : Usuario
                 }
             }
             .tbl_body{
-                .ltcFlexDirec(column);
+                .FlexDirec(column);
                 .rw_bd{
-                    .ltcFlexDirec(row);
+                    .FlexDirec(row);
                 }
             }
         }
@@ -158,7 +158,7 @@ Author     : Usuario
 
             }
             .tbl_body{
-                .ltcFlexDirec(row);
+                .FlexDirec(row);
                 .rw{
                     .cell{
                         &:nth-child(2n+2){
@@ -192,11 +192,11 @@ Author     : Usuario
 
 }
 
-.ltc_fakeTable{
+.@{CPrefix}_fakeTable{
     .tbl_body,
     .tbl_header{
         .rw{
-            .ltcFlexAlignItem(@fAlignItem:stretch);
+            .FlexAlignItem(@fAlignItem:stretch);
             .rw_tl{
 
             }

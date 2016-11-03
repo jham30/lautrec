@@ -8,7 +8,7 @@ Created on : Jun 30, 2016, 8:20:15 AM
 Author     : jaime
 */
 
-.ltcLayoutWrap{
+.@{CPrefix}LayoutWrap{
 
     overflow: auto;
     border: 2px solid #f00;
@@ -17,21 +17,21 @@ Author     : jaime
         height: 100%;
         width: 100%;
         position: fixed;
-        .ltcFlexJustCont;
-        .ltcFlexAlignItem;
+        .FlexJustContg;
+        .FlexAlignItem;
     }
     &.tp_sheet{
-        .ltcFlexJustCont;
-        .ltcFlexDirec;
+        .FlexJustContg;
+        .FlexDirec;
     }
     &.tp_justify{
         height: 100%;
         width: 100%;
         position: fixed;
-        .ltcFlexAlignItem(stretch);
+        .FlexAlignItem(stretch);
     }
 }
-.ltcLyI{
+.@{CPrefix}LyI{
     /*    border: 1px solid #f00;*/
     .flexProperties(@fAlignItem:stretch);
     /*esto se soluciono solo hay que tener cuidado*/
@@ -39,8 +39,8 @@ Author     : jaime
     //     min-height: -webkit-min-content;
     // }
     &.shk_tabs{
-        .ltcLyI[aria-hidden*="false"],
-        .ltcLyI[aria-hidden*="true"]{
+        .@{CPrefix}LyI[aria-hidden*="false"],
+        .@{CPrefix}LyI[aria-hidden*="true"]{
             display: -ms-flexbox !important;
             display: -webkit-flex !important;
             display: flex !important;
@@ -63,7 +63,7 @@ Author     : jaime
             .fadeInDown;
         }
     }
-    .ltcLyCP{
+    .@{CPrefix}LyCP{
         height: 100%;
         width: 100%;
         &.scrollOn{
@@ -75,7 +75,7 @@ Author     : jaime
         -webkit-flex: 1;
         -ms-flex: 1;
         flex: 1;
-        .ltcLyCP{
+        .@{CPrefix}LyCP{
             height: auto;
             width: auto;
         }
@@ -91,14 +91,14 @@ Author     : jaime
 // }
 /*responsive*/
 @media (min-width: 768px) {
-    .ltcLayoutWrap{
-        .ltcLyI{
+    .@{CPrefix}LayoutWrap{
+        .@{CPrefix}LyI{
             //min-height:inherit;
         }
         /*acomoda en columnas cada ltcLyIdentro de el portador de la clase*/
         .dpl_R{
-            .ltcFlexDirec;
-            .ltcLyI{
+            .FlexDirec;
+            .@{CPrefix}LyI{
                 /*hace que el ltcLyI portador ajuste su tamaño al ancho total y divide en arriba y abajo los ltcLyI anteriores y posteriores, en pantallas medianas*/
                 &.sm{
                     flex-basis: 100%;
@@ -106,21 +106,19 @@ Author     : jaime
             }
             /*reparte el ancho total en partes iguales para cada ltcLyI hijo*/
             &.LySW{
-                .ltcLyI{
+                .@{CPrefix}LyI{
                     flex: 1;
                 }
             }
-        }    display: block;
-            }
         }
     }
-    .ltcLyI{
+    .@{CPrefix}LyI{
         &.scroll{
             min-height: inherit;
             >*{
                 overflow: auto;
             }
-            .ltcLyI{
+            .@{CPrefix}LyI{
                 display: block;
             }
         }
@@ -139,9 +137,9 @@ Author     : jaime
 }
 
 @media (min-width: 992px) {
-    .ltcLayoutWrap{
+    .@{CPrefix}LayoutWrap{
         .dpl_R{
-            .ltcLyI{
+            .@{CPrefix}LyI{
 
                 &.sm{
                     flex-basis: auto;

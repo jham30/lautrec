@@ -19,7 +19,7 @@ and open the template in the editor.
 @btnborder: 0.2em;
 @btnpadding: 0.25em 1em;
 
-.ltcLink
+.@{CPrefix}Link
 {
     text-decoration: none;
     cursor:pointer;
@@ -34,7 +34,7 @@ and open the template in the editor.
         text-decoration: underline;
     }
     &.order_r{
-        .ltcIcon{
+        .@{CPrefix}Icon{
             -webkit-order: 1;
             -ms-flex-order: 1;
             order: 1;
@@ -42,12 +42,12 @@ and open the template in the editor.
         }
     }
     &.order_l{
-        .ltcIcon{
+        .@{CPrefix}Icon{
         }
     }
-    .ltcIcon{
+    .@{CPrefix}Icon{
     }
-    .ltcLabel{
+    .@{CPrefix}Label{
     }
 
 }
@@ -114,26 +114,26 @@ and open the template in the editor.
 .tp_ltcNaked{
 }
 
-.ltcGroupWrap{
+.@{CPrefix}GroupWrap{
     .flexProperties(@fDir:row;@fAlignItem:center);
 }
-.ltcGroupWrap,
-.ltcButtonsGroup{
+.@{CPrefix}GroupWrap,
+.@{CPrefix}ButtonsGroup{
     /*permite alinear los elementos, por defecto se alinian a la izquierda*/
     //centro
     &.alg_c{
-        .ltcFlexJustCont(@fJustCont:center);
+        .FlexJustContg(@fJustCont:center);
     }
     //derecha
     &.alg_r{
-        .ltcFlexJustCont(@fJustCont:flex-start);
+        .FlexJustContg(@fJustCont:flex-start);
     }
     //izquierda
     &.alg_l{
 
     }
-    .ltcButtonsGroup,
-    .ltcPaM{
+    .@{CPrefix}ButtonsGroup,
+    .@{CPrefix}PaM{
         margin-left: 1em;
         &:first-child{
             margin-left: 0;
@@ -141,8 +141,8 @@ and open the template in the editor.
     }
     &.dpl_block{
         .flexDisplay;
-        .ltcLink,
-        .ltcButtonsGroup{
+        .@{CPrefix}Link,
+        .@{CPrefix}ButtonsGroup{
             -webkit-justify-content: center;
             -ms-flex-pack: center;
             justify-content: center;
@@ -158,7 +158,7 @@ and open the template in the editor.
 @bg-border_w:1px;
 @bg-border_c:rgba(0,0,0,0.2);
 @bg-border_r:5px;
-.ltcButtonsGroup{
+.@{CPrefix}ButtonsGroup{
     .flexDisplay(inline-flex);
     >*,
     .tp_ltcButton{
@@ -181,8 +181,8 @@ and open the template in the editor.
     // }
     &.dpl_block_v{
         min-width: 100%;
-        .ltcFlexDirec(@fDir:column);
-        .ltcFlexAlignItem(@fAlignItem:stretch);
+        .FlexDirec(@fDir:column);
+        .FlexAlignItem(@fAlignItem:stretch);
     }
     &.tpBlock_H
     {
@@ -216,15 +216,15 @@ and open the template in the editor.
         border:none;
     }
     &.tp_iconBlock{
-        .ltcLink{
-            .ltcFlexDirec(column);
+        .@{CPrefix}Link{
+            .FlexDirec(column);
             border: @bg-border_w solid @bg-border_c;
             background-color: @bg_bck;
             padding:1em;
         }
     }
     &.tp_wizard_1{
-        .ltcLink{
+        .@{CPrefix}Link{
             //background-color: rgba(0,0,0,0.1);
             border-top-width: 10px;
             border-top-style: solid;
@@ -288,8 +288,8 @@ and open the template in the editor.
     &.tp_wizard_2{
         @wz_color:#bbb;
         @wz_current_color:@c_blue;
-        .ltcLink{
-            .ltcFlexDirec(column);
+        .@{CPrefix}Link{
+            .FlexDirec(column);
             padding:1em;
             text-align: center;
             position: relative;
@@ -340,7 +340,7 @@ and open the template in the editor.
         }
     }
 }
-.ltcSwitch{
+.@{CPrefix}Switch{
     .flexProperties(@fAlignItem:flex-end);
     width: 2.5em;
     border-radius: 1em;
@@ -355,7 +355,7 @@ and open the template in the editor.
         .animation;
     }
     &.checked{
-        .ltcFlexAlignItem(flex-start);
+        .FlexAlignItem(flex-start);
         background-color: @c_lemon_green;
         border: 2px solid @c_lemon_green;
 
@@ -368,8 +368,8 @@ and open the template in the editor.
 }
 /*responsive*/
 @media (min-width: 768px) {
-    .ltcButtonsGroup{
-        //.ltcFlexwrap(nowrap);
+    .@{CPrefix}ButtonsGroup{
+        //.Flexwrapg(nowrap);
     }
 }
 @media (min-width: 992px) {

@@ -20,7 +20,7 @@ Author     : Usuario
 
 }
 /*Diseño de botones basicos*/
-.ltcLink{
+.@{CPrefix}Link{
   &:hover,
   &.selected{
     //border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -29,9 +29,9 @@ Author     : Usuario
 }
 /*end diseño de botones basicos*/
 /*Diseño de grupo de botones basicos*/
-.ltcButtonsGroup{
+.@{CPrefix}ButtonsGroup{
   // border: 1px solid rgba(0,0,0,0.2);
-  .ltcLink{
+  .@{CPrefix}Link{
     // border-radius: 0;
     // border-bottom: none;
     // border-top: none;
@@ -50,7 +50,7 @@ Author     : Usuario
   }
   /*Diseño de listas de botones*/
   &.dpl_block_v{
-    .ltcLink{
+    .@{CPrefix}Link{
       border-radius: 0;
       //border-top: 1px solid rgba(0,0,0,0.3);
       border-left: none;
@@ -62,7 +62,7 @@ Author     : Usuario
   /*Diseño de botones tabs*/
   &.tp_tab{
     padding-left: 1em;
-    .ltcLink{
+    .@{CPrefix}Link{
       border-radius: 0;
      // border-bottom: 1px solid rgba(0,0,0,0.3);
       border-left: none;
@@ -77,7 +77,7 @@ Author     : Usuario
       }
     }
     &.dpl_block_v{
-      .ltcLink{
+      .@{CPrefix}Link{
         border-top: none;
         &.selected,
         &.active,
@@ -92,7 +92,7 @@ Author     : Usuario
 
   }
   // &.tp_list{
-  //   .ltcLink{
+  //   .@{CPrefix}Link{
   //     border-radius: 0;
   //     padding: 0 1em;
   //     border-left: 1px solid rgba(0,0,0,0.3);
@@ -131,19 +131,20 @@ Author     : Usuario
   }
 }
 /* formularios*/
-.ltcFormgrup{
-  .ltcFormItem{
+.@{CPrefix}Formgrup{
+  .@{CPrefix}FormItem{
     //    margin-bottom: 1em;
   }
 }
 /*fija un valor basico para los radios en las esquinas de los elementos de formularios*/
 @form_radius:3px;
-.ltcFormItem{
+.@{CPrefix}FormItem{
   input[type="text"],
   button,
   select,
   textarea,
-  .ltcInputComplement{
+  .ltcMultiselect,
+  .@{CPrefix}InputComplement{
     background-color: rgba(0,0,0,0.1);
     padding: 1rem/4 1rem/2;
     border: none;

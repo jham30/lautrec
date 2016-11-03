@@ -11,7 +11,11 @@ Author     : jaime
 @frmcolor:rgba(0, 0, 0, 0.1);
 @frmborder:3px;
 @frmpadding: 0.25rem 0.5rem;
-
+@frminput:;
+@frmtextarea:;
+@frmcheckbox:;
+@frmradio:;
+@frmselect:;
 
 input[type="checkbox"]{
     position: relative;
@@ -19,7 +23,7 @@ input[type="checkbox"]{
 
     }
 }
-.ltcFormItem{
+.@{CPrefix}FormItem{
     .flexProperties(@fDis:flex;@fDir:row);
     input,
     select,
@@ -29,6 +33,21 @@ input[type="checkbox"]{
         /*background-color: rgba(0, 0, 0, 0.07);*/
         // border: 1px solid rgba(0, 0, 0, 0.1);
     }
+    .ltcMultiselect{
+        position: relative;
+        .MSOptions{
+            position: absolute;
+            padding: 1em;
+            top: 100%;
+            left: 0;
+            margin-top: 3px;
+            background-color: #fff;
+            -webkit-box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+            box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.3);
+            .animated;
+            z-index: 3;
+        }
+    }
     input[type="radio"],
     input[type="checkbox"]{
         display: none;
@@ -37,8 +56,8 @@ input[type="checkbox"]{
         .flexDisplay;
     }
     &.dpl_v{
-        .ltcFlexDirec(column);
-        //.ltcFlexAlignItem(stretch);
+        .FlexDirec(column);
+        //.FlexAlignItem(stretch);
     }
     .tp_buttonMix,
     .tp_radio,
@@ -50,7 +69,7 @@ input[type="checkbox"]{
     .tp_buttonMix{
         //border: 1px solid rgba(0,0,0,0.2);
 
-        .ltcInputComplement{
+        .@{CPrefix}InputComplement{
 
             padding: 0 1em;
 
@@ -126,51 +145,52 @@ input[type="checkbox"]{
     }
     .tp_radio_grid{
         &.FIColum_2{
-            .ltcFlexwrap;
+            .Flexwrapg;
             label{
                 flex:0 0 100%/2;
             }
         }
         &.FIColum_3{
-            .ltcFlexwrap;
+            .Flexwrapg;
             label{
                 flex:0 0 100%/3;
             }
         }
     }
 }
-.ltcFormGroup{
+.@{CPrefix}FormGroup{
     //padding:0 0 @CWall_p @CWall_p;
     /*posibilidta aceptar elementos diferentes a ltcFormItem sin desajustar el diseño*/
-    >*:not(.ltcFormItem){
+    >*:not(.@{CPrefix}FormItem){
         .flexProperties(@fDis:flex);
-        .ltcFormItem{
+        .@{CPrefix}FormItem{
             padding:0;
         }
     }
-    .ltcFormItem,
+    .@{CPrefix}FormItem,
     >*{
+        margin-bottom: 1em;
         // padding:@CWall_p @CWall_p 0 0;
         // flex:0 0 100%;
     }
     &.dpl_v{
-        .ltcFormItem,
+        >.@{CPrefix}FormItem,
         >*{
-            .ltcFlexDirec(column);
-            .ltcFlexAlignItem(stretch);
+            .FlexDirec(column);
+            .FlexAlignItem(stretch);
         }
     }
 }
-.ltcFormWrap{
+.@{CPrefix}FormWrap{
 
 }
 /*responsive*/
 @media (min-width: 768px) {
-    .ltcFormItem{
-        .flexDisplay(inline-flex);
+    .@{CPrefix}FormItem{
+        //.flexDisplay(inline-flex);
     }
-    .ltcFormGroup{
-        .ltcFlexAlignItem(flex-end);
+    .@{CPrefix}FormGroup{
+        .FlexAlignItem(flex-end);
     }
 }
 @media (min-width: 992px) {
