@@ -1,6 +1,17 @@
-.tlcCWall{
+@cw_bck:#fff;
+@cw-border_w:1px;
+@cw-border_c:rgba(0,0,0,0.2);
+@cw-border_r:5px;
+@cw-padding:1em;
+.ltcCWall{
     .ltcFlexAlignItem(stretch);
     padding:@CWall_p;
+    >*{
+        background-color: @cw_bck;
+        border:@cw-border_w solid @cw-border_c;
+        border-radius: @cw-border_r;
+        padding: @cw-padding;
+    }
     // .CWCard{
     //     padding:0 0 @CWall_p 0;
     // }

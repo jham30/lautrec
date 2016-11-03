@@ -7,6 +7,7 @@ and open the template in the editor.
 Created on : 18/07/2016, 07:08:55 AM
 Author     : Usuario
 */
+/*nombre del componente fake table*/
 @ftmargin:1px;
 //external border
 @fteborder:1px;
@@ -17,7 +18,7 @@ Author     : Usuario
 @ftbr:0px;
 @celldiffcolour:#efefef;
 
-*[class^="tlc_fakeTable"]{
+*[class^="ltc_fakeTable"]{
     background-color: @ftlinecolor;
     padding: @fteborder;
     .flexProperties(@fDir:row;@fAlignItem:stretch);
@@ -93,7 +94,7 @@ Author     : Usuario
 }
 /*responsive*/
 @media (min-width: 768px) {
-    *[class^="tlc_fakeTable"]{
+    *[class^="ltc_fakeTable"]{
         .ltcFlexDirec(column);
         .rw{
             flex: 1;
@@ -176,7 +177,7 @@ Author     : Usuario
 }
 
 @media (min-width: 992px) {
-    *[class^="tlc_fakeTable"]{
+    *[class^="ltc_fakeTable"]{
         .rw{
             .cell{
                 // &::before{
@@ -191,7 +192,7 @@ Author     : Usuario
 
 }
 
-.tlc_fakeTable{
+.ltc_fakeTable{
     .tbl_body,
     .tbl_header{
         .rw{

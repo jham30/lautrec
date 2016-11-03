@@ -34,12 +34,10 @@ Author     : jaime
 .ltcLyI{
     /*    border: 1px solid #f00;*/
     .flexProperties(@fAlignItem:stretch);
-    min-height: -webkit-min-content;
-    &.scroll{
-        .ltcLyI{
-            display: block;
-        }
-    }
+    /*esto se soluciono solo hay que tener cuidado*/
+    // &:not(.scroll){
+    //     min-height: -webkit-min-content;
+    // }
     &.shk_tabs{
         .ltcLyI[aria-hidden*="false"],
         .ltcLyI[aria-hidden*="true"]{
@@ -88,9 +86,9 @@ Author     : jaime
     -ms-flex: 1;
     flex: 1;
 }
-.scroll{
-    overflow: auto;
-}
+// .scroll{
+//     overflow: auto;
+// }
 /*responsive*/
 @media (min-width: 768px) {
     .ltcLayoutWrap{
@@ -101,7 +99,7 @@ Author     : jaime
         .dpl_R{
             .ltcFlexDirec;
             .ltcLyI{
-                /*hace que el ltcLyI portador ajuste su tamaño al ancho total y divide en arriba y abajo los ltcLyI anteriores y posteriores, cen pantallas medianas*/
+                /*hace que el ltcLyI portador ajuste su tamaño al ancho total y divide en arriba y abajo los ltcLyI anteriores y posteriores, en pantallas medianas*/
                 &.sm{
                     flex-basis: 100%;
                 }
@@ -112,9 +110,20 @@ Author     : jaime
                     flex: 1;
                 }
             }
+        }    display: block;
+            }
         }
     }
     .ltcLyI{
+        &.scroll{
+            min-height: inherit;
+            >*{
+                overflow: auto;
+            }
+            .ltcLyI{
+                display: block;
+            }
+        }
         &.shk_bhb{
             position: relative;
             width: inherit;

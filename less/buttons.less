@@ -12,6 +12,13 @@ and open the template in the editor.
     -ms-flex: 1;
     flex: 1;
 }*/
+/*define el estilo de los bottons*/
+@btnlinecolor:#ccc;
+@btncolor:#fff;
+@btnbackcolor:#d9534f;
+@btnborder: 0.2em;
+@btnpadding: 0.25em 1em;
+
 .ltcLink
 {
     text-decoration: none;
@@ -146,12 +153,60 @@ and open the template in the editor.
         }
     }
 }
+/*bg es buton group*/
+@bg_bck:#fff;
+@bg-border_w:1px;
+@bg-border_c:rgba(0,0,0,0.2);
+@bg-border_r:5px;
 .ltcButtonsGroup{
     .flexDisplay(inline-flex);
+    >*,
+    .tp_ltcButton{
+        border-left: @bg-border_w solid @bg-border_c;
+        padding:0 1em;
+        &:last-child{
+
+        }
+        &:first-child{
+          border-left: none;
+        }
+    }
+    // &:not(.dpl_block_v),
+    // &:not(.tp_tab),
+    // &:not(.tp_list),
+    // &:not(.tp_iconBlock),
+    // &:not(.tp_wizard_1),
+    // &:not(.tp_wizard_2){
+    //
+    // }
     &.dpl_block_v{
         min-width: 100%;
         .ltcFlexDirec(@fDir:column);
         .ltcFlexAlignItem(@fAlignItem:stretch);
+    }
+    &.tpBlock_H
+    {
+        >*,
+        .tp_ltcButton{
+            border-left: @bg-border_w solid @bg-border_c;
+            border-top:  @bg-border_w solid @bg-border_c;
+            border-bottom:  @bg-border_w solid @bg-border_c;
+            padding: 1em;
+            background-color: @bg_bck;
+            &:last-child{
+                border-right:  @bg-border_w solid @bg-border_c;
+                border-top-left-radius: 0;
+                border-top-right-radius: @bg-border_r;
+                border-bottom-right-radius: @bg-border_r;
+                border-bottom-left-radius: 0;
+            }
+            &:first-child{
+                border-top-left-radius: @bg-border_r;
+                border-top-right-radius: 0;
+                border-bottom-right-radius:0;
+                border-bottom-left-radius:@bg-border_r;
+            }
+        }
     }
     &.tp_tab
     {
@@ -161,63 +216,11 @@ and open the template in the editor.
         border:none;
     }
     &.tp_iconBlock{
-        .flexProperties(@fAlignItem:stretch);
-        margin:0 0 @CWall_p @CWall_p;
-        &.IBColum_1{
-            .ltcLink{
-                flex:0 0 100%;
-            }
-        }
-        &.IBColum_2{
-            .ltcLink{
-                flex:0 0 100%/2;
-            }
-        }
-        &.IBColum_3{
-            .ltcLink{
-                flex:0 0 100%/3;
-            }
-        }
-        &.IBColum_4{
-            .ltcLink{
-                flex:0 0 100%/4;
-            }
-        }
-        &.IBColum_5{
-            .ltcLink{
-                flex:0 0 100%/5;
-            }
-        }
-        &.IBColum_6{
-            .ltcLink{
-                flex:0 0 100%/6;
-            }
-        }
-        &.IBColum_7{
-            .ltcLink{
-                flex:0 0 100%/7;
-            }
-        }
-        &.IBColum_8{
-            .ltcLink{
-                flex:0 0 100%/8;
-            }
-        }
-        &.IBColum_9{
-            .ltcLink{
-                flex:0 0 100%/9;
-            }
-        }
-        &.IBColum_10{
-            .ltcLink{
-                flex:0 0 100%/10;
-            }
-        }
         .ltcLink{
-            // .flexProperties(@fDir:column;@fAlignItem:stretch);
-            margin: @CWall_p @CWall_p 0 0;
-            border: 1px solid rgba(0,0,0,0.3);
             .ltcFlexDirec(column);
+            border: @bg-border_w solid @bg-border_c;
+            background-color: @bg_bck;
+            padding:1em;
         }
     }
     &.tp_wizard_1{
@@ -228,6 +231,7 @@ and open the template in the editor.
             border-top-color:#ddd;
             padding:0.5em 1em;
             position: relative;
+            border-left: none;
             &:before{
                 content: "";
                 position: absolute;
@@ -365,7 +369,7 @@ and open the template in the editor.
 /*responsive*/
 @media (min-width: 768px) {
     .ltcButtonsGroup{
-        .ltcFlexwrap(nowrap);
+        //.ltcFlexwrap(nowrap);
     }
 }
 @media (min-width: 992px) {
